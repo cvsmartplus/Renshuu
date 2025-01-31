@@ -16,9 +16,7 @@ createInertiaApp({
     title: (title) => `${title} - ${appName}`,
     resolve: name => {
         const pages = import.meta.glob('./Pages/**/*.jsx', { eager: true })
-        let page = pages[`./Pages/${name}.jsx`]
-        page.default.layout = (page => <Layout children={page} />)
-        return page
+        return pages[`./Pages/${name}.jsx`]
       },
     setup({ el, App, props }) {
         const root = createRoot(el);

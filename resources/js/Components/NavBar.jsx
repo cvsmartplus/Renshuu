@@ -1,12 +1,26 @@
+import { useEffect } from "react";
 import { Link, usePage } from "@inertiajs/react";
+import Logmod from "@/Pages/Auth/LogModal";
 import ApplicationLogo from "./ApplicationLogo";
 
 export default function NavBar() {
     const { auth } = usePage().props; // Ambil data auth dari Inertia
-    const user = auth?.user; // Cek apakah user sudah login
+    const user = auth?.user;
+
+    // Gunakan useEffect untuk memantau perubahan dan memastikan modal ditutup setelah navigasi
+    useEffect(() => {
+        const modal = document.getElementById('loginModal');
+        if (modal) {
+            const backdrop = document.querySelector('.modal-backdrop');
+            if (backdrop) {
+                backdrop.remove();  // Hapus backdrop jika ada
+            }
+        }
+    }, [user]);
 
     return (
         <>
+            <Logmod />
             <nav className="navbar navbar-expand-lg sticky-top bg-light navbar-light" style={{ boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)" }}>
                 <div className="container">
                     <Link className="navbar-brand" href={route("welcome")}>
@@ -94,13 +108,13 @@ export default function NavBar() {
                             ) : (
                                 // Jika user belum login, tampilkan tombol Masuk dan Daftar
                                 <>
-                                    <li className="nav-item ms-3">
-                                        <Link className="btn btn-custom-blue btn-rounded" href={route('login')}>
+                                    <li>
+                                        <button className="btn" data-bs-toggle="modal" data-bs-target="#loginModal">
                                             Masuk
-                                        </Link>
+                                        </button>
                                     </li>
-                                    <li className="nav-item ms-3 ctabtn rounded">
-                                        <Link className="btn btn-rounded text-white" href={route('register')}>
+                                    <li className="nav-item ms-3 ">
+                                        <Link className="btn-rounded btn-cta p-2 rounded " href={route('register')}>
                                             Daftar
                                         </Link>
                                     </li>

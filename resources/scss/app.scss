@@ -42,14 +42,57 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
 }
 
+.cta {
+    color: $ctabtn;
+}
+
 // 8. Add additional custom code here
-.ctabtn {
+.btn-cta {
     background-color: $ctabtn;
+    text-decoration: none;
     color: white;
     &:hover {
         background-color: darken($ctabtn, 10%);
     }
 }
+
+.btn-outline-cta {
+    border: 1px solid $ctabtn;
+    color: $ctabtn;
+    background-color: transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.375rem;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.15s ease-in-out;
+
+    &:hover {
+        background-color: $ctabtn;
+        color: white;
+        border-color: $ctabtn;
+    }
+
+    &:focus,
+    &:active {
+        background-color: $ctabtn;
+        color: white;
+        border-color: $ctabtn;
+        box-shadow: 0 0 0 0.25rem rgba($ctabtn, 0.5);
+    }
+
+    &:disabled,
+    &.disabled {
+        background-color: transparent;
+        border-color: $ctabtn;
+        color: $ctabtn;
+        opacity: 0.65;
+        cursor: not-allowed;
+    }
+}
+
 
 .sidebar {
     background-color: $sidbar;

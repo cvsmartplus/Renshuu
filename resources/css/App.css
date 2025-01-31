@@ -6956,12 +6956,49 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   font-weight: 600;
 }
 
-.ctabtn {
+.cta {
+  color: #062A78;
+}
+
+.btn-cta {
   background-color: #062A78;
+  text-decoration: none;
   color: white;
 }
-.ctabtn:hover {
+.btn-cta:hover {
   background-color: rgb(3.5714285714, 25, 71.4285714286);
+}
+
+.btn-outline-cta {
+  border: 1px solid #062A78;
+  color: #062A78;
+  background-color: transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.375rem;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.15s ease-in-out;
+}
+.btn-outline-cta:hover {
+  background-color: #062A78;
+  color: white;
+  border-color: #062A78;
+}
+.btn-outline-cta:focus, .btn-outline-cta:active {
+  background-color: #062A78;
+  color: white;
+  border-color: #062A78;
+  box-shadow: 0 0 0 0.25rem rgba(6, 42, 120, 0.5);
+}
+.btn-outline-cta:disabled, .btn-outline-cta.disabled {
+  background-color: transparent;
+  border-color: #062A78;
+  color: #062A78;
+  opacity: 0.65;
+  cursor: not-allowed;
 }
 
 .sidebar {
