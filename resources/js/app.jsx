@@ -6,9 +6,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import '@fortawesome/fontawesome-free/js/all.min.js';
 
 import { createInertiaApp } from '@inertiajs/react';
-import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { createRoot } from 'react-dom/client';
-import Layout from './Layouts/layout';
 
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 

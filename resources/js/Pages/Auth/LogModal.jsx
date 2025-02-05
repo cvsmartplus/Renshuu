@@ -15,7 +15,7 @@ export default function Logmod(canResetPassword) {
         const [modalOpen, setModalOpen] = useState(true);
         const submit = (e) => {
             e.preventDefault();
-            post(route('login'), {
+            post(route('login.post'), {
                 onFinish: () => {
                     reset('password');
                     setModalOpen(false);
@@ -25,8 +25,8 @@ export default function Logmod(canResetPassword) {
         useEffect(() => {
             if (!modalOpen) {
                 const modalElement = document.getElementById('loginModal');
-                const modal = new window.bootstrap.Modal(modalElement);
-                modal.hide(); 
+                const popup = new window.bootstrap.Modal(modalElement);
+                popup.hide();
             }
         }, [modalOpen]);
     return (
