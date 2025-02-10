@@ -22,7 +22,7 @@ export default function NavBar() {
     return (
         <>
             <Logmod />
-            <nav className="navbar navbar-expand-lg sticky-top bg-light navbar-light" style={{ boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)" }}>
+            <nav className="navbar navbar-expand-lg sticky-top bg-light shadow-md">
                 <div className="container">
                     <Link className="navbar-brand" href={route("welcome")}>
                         <ApplicationLogo 

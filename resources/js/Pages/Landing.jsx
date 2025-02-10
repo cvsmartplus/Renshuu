@@ -1,3 +1,4 @@
+import Feature from "@/Components/Feature";
 import Banner from "@/Layouts/Banner";
 import Layout from "@/Layouts/layout";
 import { Head } from "@inertiajs/react";
@@ -8,6 +9,7 @@ export default function Landing({title, name}) {
         <Layout>
         <Head title={title} />
         <Banner />
+        <Feature />
         <section className="container-fluid  w-full h-100 content-container text-center">
         <h1 className="mt-30">Hello, {name}! ini Landing Page</h1>
         </section>
