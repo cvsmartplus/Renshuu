@@ -30,7 +30,7 @@ class RegisteredUserController extends Controller
      * @throws \Illuminate\Validation\ValidationException
      */
     public function store(Request $request): RedirectResponse
-{
+    {
     if (User::where('email', $request->email)->exists()) {
         return redirect()->back()->withErrors(['email' => 'Email sudah terdaftar!']);
     }

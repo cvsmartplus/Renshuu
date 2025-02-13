@@ -100,7 +100,7 @@ export default function NavBar() {
                                         </button>
                                     </li>
                                     <li className="nav-item ms-3 ">
-                                        <Link className="btn-rounded btn-cta p-2 rounded " href={route('register')}>
+                                        <Link className="btn-rounded link-cta p-2 rounded " href={route('register')}>
                                             Daftar
                                         </Link>
                                     </li>
