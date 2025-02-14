@@ -48,6 +48,29 @@ h1, h2, h3, h4, h5, h6 {
 
 // 8. Add additional custom code here
 .btn-cta {
+    background-color: #062A78;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    border: none;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .btn-cta:hover {
+    background-color: #041C52;
+    transform: translateY(-2px);
+    color: white;
+    box-shadow: 0 4px 10px rgba(6, 42, 120, 0.3);
+  }
+  
+  .btn-cta:active {
+    transform: translateY(1px);
+    box-shadow: none;
+  }
+
+  .link-cta {
     background-color: $ctabtn;
     text-decoration: none;
     color: white;
