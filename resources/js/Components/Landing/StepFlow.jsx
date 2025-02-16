@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-class About extends Component {
+class StepFlow extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
             processLeft: [
-                { id: 1, step: '01', title: 'Daftar dan Lengkapi Data Diri Anda', text: 'Lorem ipsum dolor sit amet, cibo consectetuer elit adipiscing.' },
-                { id: 2, step: '02', title: 'Belajar Secara Hybrid', text: 'Lorem ipsum dolor sit amet, cibo consectetuer elit adipiscing.' },
-                { id: 3, step: '03', title: 'Dapatkan Sertifikat Kursus!', text: 'Lorem ipsum dolor sit amet, cibo consectetuer elit adipiscing.' }
+                { id: 1, step: '01', title: 'Daftar dan Lengkapi Data Diri Anda', text: 'Lengkapi data diri untuk memulai mengembangkan diri Anda bersama kami.' },
+                { id: 2, step: '02', title: 'Belajar Secara Hybrid', text: 'Ikuti program pembelajaran yang menggabungkan metode online dan tatap muka.' },
+                { id: 3, step: '03', title: 'Dapatkan Sertifikat Kursus!', text: 'Selesaikan kursus dan dapatkan sertifikat yang diakui secara profesional.' }
             ],
             processRight: [
-                { id: 1, step: '01', title: 'Daftar dan Lengkapi Data Diri Anda', text: 'Lorem ipsum dolor sit amet, cibo consectetuer elit adipiscing.' },
-                { id: 2, step: '02', title: 'Cari Pekerjaan yang Diminati', text: 'Lorem ipsum dolor sit amet, cibo consectetuer elit adipiscing.' },
-                { id: 3, step: '03', title: 'Lamar dan Tunggu Informasinya!', text: 'Lorem ipsum dolor sit amet, cibo consectetuer elit adipiscing.' }
+                { id: 1, step: '01', title: 'Daftar dan Lengkapi Data Diri Anda', text: 'Lengkapi data diri untuk memulai perjalanan karir Anda bersama kami.' },
+                { id: 2, step: '02', title: 'Cari Pekerjaan yang Diminati', text: 'Telusuri berbagai lowongan pekerjaan yang sesuai dengan minat dan keahlian Anda' },
+                { id: 3, step: '03', title: 'Lamar dan Tunggu Informasinya!', text: 'Ajukan lamaran kerja dan tunggu informasi lebih lanjut dari perusahaan.' }
             ]
         }
     }
@@ -28,7 +28,7 @@ class About extends Component {
                     <div className='py-5'>
                     <header className="text-start py my-5">
                         <h1 className="fw-bold">Mulai Perjalanan Karirmu dengan Kami!</h1>
-                        <p className="text-muted">Lorem ipsum dolor sit amet consectetur</p>
+                        <p className="text-muted">Nikmati kesempatan untuk berkolaborasi dengan para pemimpin industri dan meningkatkan karir Anda</p>
                     </header>
                     <div className="row align-items-center">
                         <div className="col-md-4">
@@ -88,4 +88,4 @@ class About extends Component {
     }
 }
 
-export default About;
+export default StepFlow;

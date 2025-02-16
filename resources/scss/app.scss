@@ -38,6 +38,13 @@ body {
     font-weight: 400;
 }
 
+.text-jost{
+    font-family: 'Jost', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    line-height: 1.6;
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
 }
@@ -142,4 +149,38 @@ h1, h2, h3, h4, h5, h6 {
 
 .bg-fill{
     background-color: $fillcont;
+}
+/* Style dasar */
+.custom-navlink {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    display: inline-block;
+    position: relative;
+}
+
+/* Garis bawah */
+.custom-navlink::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -3px;
+    width: 0;
+    height: 2px;
+    background-color: $ctabtn;
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
+/* Efek saat hover & aktif */
+.custom-navlink:hover,
+.custom-navlink.active-link {
+    color: $ctabtn; /* Warna berubah saat aktif/hover */
+    transform: scale(1.05); /* Teks sedikit membesar */
+}
+
+.custom-navlink:hover::after,
+.custom-navlink.active-link::after {
+    width: 100%; /* Garis selebar teks */
+    left: 0; /* Posisi di tengah */
 }

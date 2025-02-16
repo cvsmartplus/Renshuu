@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { Link, usePage } from "@inertiajs/react";
-import Logmod from "@/Pages/Auth/LogModal";
+import Logmod from "@/Components/Forms/LogModal";
 import ApplicationLogo from "./ApplicationLogo";
-import NavLink from "./NavLink";
+import NavLink from "../UI/NavLink";
 
 export default function NavBar() {
     const { auth } = usePage().props; // Ambil data auth dari Inertia

@@ -1,3 +1,4 @@
+import { Link } from "@inertiajs/react";
 import React, { useState } from "react";
 
 const articles = [
@@ -63,7 +64,7 @@ const ArticleCards = () => {
           </div>
         ))}
       </div>
-      <button className="btn btn-cta mt-5">Lihat Selengkapnya</button>
+      <Link href={route("article")} className="btn btn-cta mt-5">Lihat Selengkapnya</Link>
     </div>
   );
 };

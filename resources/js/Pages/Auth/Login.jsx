@@ -1,11 +1,11 @@
-import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
+import Layout from '@/Layouts/Layout';
 import GuestLayout from '@/Layouts/GuestLayout';
 import { Head } from '@inertiajs/react';
-import LoginForm from '@/Components/LoginForm';
+import LoginForm from '@/Components/Forms/LoginForm';
 
 export default function Login({ status, canResetPassword }) {
     return (
-        <AuthenticatedLayout>
+        <Layout>
             <GuestLayout status={status}>
                 <Head title="Log in" />
                 <div className="container">
@@ -17,6 +17,6 @@ export default function Login({ status, canResetPassword }) {
                     </div>
                 </div>
             </GuestLayout>
-        </AuthenticatedLayout>
+        </Layout>
     );
 }

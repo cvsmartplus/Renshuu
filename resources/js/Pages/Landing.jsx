@@ -1,12 +1,12 @@
-import About from "@/Components/About";
-import ArticleCards from "@/Components/ArticleGridTooltip";
-import Counter from "@/Components/Counter";
-import CourseGrid01 from "@/Components/CourseGridTooltip";
-import Features from "@/Components/Features";
-import Partner from "@/Components/partner";
-import Banner from "@/Layouts/Banner";
+import ArticleCards from "@/Components/Landing/ArticleGridTooltip";
+import Counter from "@/Components/Landing/Counter";
+import CourseGrid01 from "@/Components/Landing/CourseGridTooltip";
+import Features from "@/Components/Landing/Features";
+import Partner from "@/Components/Landing/Partner";
+import Banner from "@/Components/Landing/Banner";
 import Layout from "@/Layouts/layout";
 import { Head } from "@inertiajs/react";
+import StepFlow from "@/Components/Landing/StepFlow";
 
 export default function Landing({title}) {
     return (
@@ -16,7 +16,7 @@ export default function Landing({title}) {
         <Banner />
         <Features />
         <Counter />
-        <About />
+        <StepFlow />
         <CourseGrid01 />
         <Partner/>
         <ArticleCards />
