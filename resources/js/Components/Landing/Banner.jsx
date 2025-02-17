@@ -39,11 +39,11 @@ const FloatingHeader = () => (
     animate={{ y: [0, -10, 0] }}
     transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
   >
-    <span style={{ display: "block", fontSize: "2.5rem", lineHeight: "1.2" }}>
-      Lorem ipsum dolor sit amet
+    <span className="d-block text-jost fw-bold" style={{ fontSize: "2.5rem", lineHeight: "1.2" }}>
+    Raih Peluang Karir dan 
     </span>
-    <span style={{ display: "block", fontSize: "1.5rem", color: "#555" }}>
-      consectetur adipisicing elit.
+    <span className="d-block text-jost" style={{ fontSize: "1.5rem", color: "#555" }}>
+    Tingkatkan Keahlian Anda
     </span>
   </motion.h1>
 );
@@ -56,9 +56,7 @@ const FadingParagraph = () => (
     transition={{ duration: 1.5, ease: "easeOut" }}
     style={{ fontSize: "1rem", color: "#777" }}
   >
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ullam libero magni
-    reiciendis quam ipsa blanditiis, facilis velit eaque illo? Consequuntur
-    necessitatibus molestias repellendus. Dolores, expedita?
+    Temukan pekerjaan yang sesuai dengan keinginan Anda sambil memperkaya keterampilan melalui kursus-kursus kami
   </motion.p>
 );
 

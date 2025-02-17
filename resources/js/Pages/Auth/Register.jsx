@@ -1,9 +1,9 @@
-import Checkbox from '@/Components/Checkbox';
-import InputError from '@/Components/InputError';
-import InputLabel from '@/Components/InputLabel';
-import PrimaryButton from '@/Components/PrimaryButton';
-import TextInput from '@/Components/TextInput';
-import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
+import Checkbox from '@/Components/UI/Checkbox';
+import InputError from '@/Components/UI/InputError';
+import InputLabel from '@/Components/UI/InputLabel';
+import PrimaryButton from '@/Components/UI/PrimaryButton';
+import TextInput from '@/Components/UI/TextInput';
+import Layout from '@/Layouts/Layout';
 import { Head, useForm } from '@inertiajs/react';
 import { useEffect } from 'react';
 import { toast } from 'react-toastify';
@@ -56,7 +56,7 @@ export default function Register() {
     return (
         <>
         <Head title="Register" />
-        <AuthenticatedLayout>
+        <Layout>
           {/* Registration Section */}
           <section className="py-3 py-md-5 py-xl-8">
             <div className="container">
@@ -187,7 +187,7 @@ export default function Register() {
             </div>
           </section>
 
-        </AuthenticatedLayout>
+        </Layout>
         </>
     );
 }

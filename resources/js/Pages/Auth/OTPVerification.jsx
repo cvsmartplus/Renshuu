@@ -1,8 +1,7 @@
-import InputError from "@/Components/InputError";
-import InputLabel from "@/Components/InputLabel";
-import PrimaryButton from "@/Components/PrimaryButton";
-import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
-import { Head, Link, useForm } from "@inertiajs/react";
+import InputError from "@/Components/UI/InputError";
+import PrimaryButton from "@/Components/UI/PrimaryButton";
+import Layout from "@/Layouts/Layout";
+import { Head, useForm } from "@inertiajs/react";
 import { useRef, useEffect } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -64,7 +63,7 @@ export default function OTPVerification({email}) {
     return (
         <>
             <Head title="Verifikasi OTP" />
-            <AuthenticatedLayout >
+            <Layout >
                 <section className="py-4 py-md-5 py-xl-5" style={{ height: "60vh" }}>
                     <div className="container">
                         <div className="row gy-4 align-items-center">
@@ -112,7 +111,7 @@ export default function OTPVerification({email}) {
                         </div>
                     </div>
                 </section>
-            </AuthenticatedLayout>
+            </Layout>
         </>
     );
 }
