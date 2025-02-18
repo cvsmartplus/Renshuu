@@ -17,6 +17,7 @@ return new class extends Migration
             $table->text('content');
             $table->foreignId('author_id')->references('id')->on('course_admins');
             $table->text('media_path');
+            $table->foreignId('manager_id')->references('id')->on('managers');
             $table->timestamps();
         });
     }
@@ -26,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('subcriptions');
+        Schema::dropIfExists('articles');
     }
 };

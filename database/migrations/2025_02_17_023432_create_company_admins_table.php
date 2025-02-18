@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('biodata_company')->references('id')->on('biodata_companys');
             $table->string('username');
             $table->string('password');
+            $table->foreignId('manager_id')->references('id')->on('managers');
             $table->timestamps();
         });
     }
@@ -25,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('articles');
+        Schema::dropIfExists('company_admins');
     }
 };
