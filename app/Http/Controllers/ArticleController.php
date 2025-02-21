@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Article;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -13,7 +14,10 @@ class ArticleController extends Controller
     public function index()
     {
         //
-        return Inertia::render('Article');
+        $articles = Article::latest()->get(); // Ambil data terbaru dulu
+        return Inertia::render('Article', [
+            'articles' => $articles
+        ]);
     }
 
     /**
@@ -35,10 +39,22 @@ class ArticleController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Article $artikel)
     {
-        //
+        return Inertia::render('Article/SingleArticle', [
+            'article' => [
+                'id' => $artikel->id,
+                'title' => $artikel->title,
+                'slug' => $artikel->slug,
+                'content' => $artikel->content,
+                'excerpt' => $artikel->excerpt,
+                'media_path' => $artikel->media_path,
+                'created_at' => $artikel->created_at->format('d M Y'),
+                'author' => $artikel->author->name ?? 'Anonim',
+            ]
+        ]);
     }
+
 
     /**
      * Show the form for editing the specified resource.

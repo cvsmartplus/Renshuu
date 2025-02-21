@@ -188,3 +188,16 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%; /* Garis selebar teks */
     left: 0; /* Posisi di tengah */
 }
+
+.content h1, .content h2, .content h3 {
+    font-weight: bold;
+}
+
+.content img {
+    max-width: 100%;
+    height: auto;
+}
+
+.content p {
+    margin-bottom: 1rem;
+}

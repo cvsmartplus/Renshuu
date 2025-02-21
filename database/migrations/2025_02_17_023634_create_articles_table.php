@@ -10,17 +10,22 @@ return new class extends Migration
      * Run the migrations.
      */
     public function up(): void
-    {
-        Schema::create('articles', function (Blueprint $table) {
-            $table->id();
-            $table->string('title');
-            $table->text('content');
-            $table->foreignId('author_id')->references('id')->on('course_admins');
-            $table->text('media_path');
-            $table->foreignId('manager_id')->references('id')->on('managers');
-            $table->timestamps();
-        });
-    }
+{
+    Schema::create('articles', function (Blueprint $table) {
+        $table->id();
+        $table->string('title');
+        $table->string('slug')->unique(); 
+        $table->text('content');
+        $table->text('excerpt')->nullable();
+        $table->foreignId('author_id')->constrained('course_admins')->onDelete('cascade');
+        $table->foreignId('manager_id')->constrained('managers')->onDelete('cascade');
+        $table->text('media_path')->nullable();
+        $table->enum('status', ['draft', 'published'])->default('draft'); // Status artikel
+        $table->timestamps();
+    });
+}
+
+
 
     /**
      * Reverse the migrations.
