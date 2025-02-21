@@ -5,7 +5,7 @@ import Layout from "@/Layouts/layout";
 import { Head } from "@inertiajs/react";
 import { useState } from "react";
 
-export default function Article({ articles }) { // 🟢 Ambil data dari backend
+export default function Article({ articles }) { 
     const [searchTerm, setSearchTerm] = useState("");
     const [filter, setFilter] = useState("Semua");
 
@@ -15,12 +15,12 @@ export default function Article({ articles }) { // 🟢 Ambil data dari backend
     // 🟢 Filtering berdasarkan searchTerm
     const filteredArticles = articles
         .filter(article => 
-            article.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            article.description.toLowerCase().includes(searchTerm.toLowerCase())
+            article?.title?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            article?.description?.toLowerCase().includes(searchTerm.toLowerCase())
         )
         .sort((a, b) => {
-            if (filter === "Terbaru") return new Date(b.id) - new Date(a.id);
-            if (filter === "Terlama") return new Date(a.id) - new Date(b.id);
+            if (filter === "Terbaru") return new Date(b.created_at) - new Date(a.created_at);
+            if (filter === "Terlama") return new Date(a.created_at) - new Date(b.created_at);
             return 0;
         });
 

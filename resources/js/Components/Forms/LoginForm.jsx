@@ -14,7 +14,7 @@ export default function LoginForm({ onSuccess, canResetPassword }) {
 
     const submit = (e) => {
         e.preventDefault();
-        post(route('login'), {
+        post(route('login.post'), {
             onSuccess: () => {
                 if (onSuccess) onSuccess();
                 window.location.reload();
@@ -69,7 +69,14 @@ export default function LoginForm({ onSuccess, canResetPassword }) {
                     <label htmlFor="remember" className="form-check-label ms-2">Ingatkan Saya</label>
                 </div>
                 {canResetPassword && (
-                    <Link href={route('password.request')} className="text-decoration-none text-danger">
+                    <Link 
+                    href={route('password.request')} 
+                    className="text-decoration-none text-danger"
+                    onClick={(e) => {
+                        e.preventDefault(); // Mencegah navigasi Inertia
+                        window.location.href = route('password.request'); // Paksa reload
+                    }}
+                    >
                         Lupa Kata Sandi?
                     </Link>
                 )}

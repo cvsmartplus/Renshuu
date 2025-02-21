@@ -5,7 +5,7 @@ import ApplicationLogo from "./ApplicationLogo";
 import NavLink from "../UI/NavLink";
 
 export default function NavBar() {
-    const { auth } = usePage().props; // Ambil data auth dari Inertia
+    const { auth, canresetpassword } = usePage().props; // Ambil data auth dari Inertia
     const user = auth?.user;
 
     // Gunakan useEffect untuk memantau perubahan dan memastikan modal ditutup setelah navigasi
@@ -21,7 +21,7 @@ export default function NavBar() {
 
     return (
         <>
-            <Logmod />
+            <Logmod canResetPassword={canresetpassword}/>
             <nav className="navbar navbar-expand-lg sticky-top bg-light shadow-md">
                 <div className="container">
                     <Link className="navbar-brand" href={route("welcome")}>
