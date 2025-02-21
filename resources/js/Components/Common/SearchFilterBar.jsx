@@ -31,12 +31,14 @@ export default function SearchFilterBar({
                 type="search"
                 id="search"
                 name="search"
-                aria-describedby="search"
                 className="form-control border-start-0"
                 placeholder={placeholder}
                 value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-              />
+                onChange={(e) => {
+                    setSearchTerm(e.target.value);
+                    console.log("Search Term:", e.target.value); // 🟢 Debugging log
+                }}
+            />
             </div>
 
             {/* Dropdown Filter */}

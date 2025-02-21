@@ -26,6 +26,9 @@
         "framer-motion": "^12.4.2",
         "react-bootstrap": "^2.10.9",
         "react-countup": "^6.5.3",
-        "react-toastify": "^11.0.3"
+        "react-markdown": "^10.0.0",
+        "react-toastify": "^11.0.3",
+        "rehype-raw": "^7.0.0",
+        "remark-gfm": "^4.0.1"
     }
 }

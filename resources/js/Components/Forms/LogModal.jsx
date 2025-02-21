@@ -1,6 +1,5 @@
 import LoginForm from '@/Components/Forms/LoginForm';
-import { Link, useForm } from '@inertiajs/react';
-import { useState, useEffect } from 'react';
+import { Link } from '@inertiajs/react';
 
 export default function Logmod({ canResetPassword }) {
     return (
@@ -13,7 +12,6 @@ export default function Logmod({ canResetPassword }) {
                     <div className="modal-body">
                         <LoginForm 
                             canResetPassword={canResetPassword}
-                            onSuccess={() => window.location.reload()} // Reload setelah login sukses
                         />
                         <div className='mt-3'>
                             <p className="text-center">
