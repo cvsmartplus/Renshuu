@@ -3,11 +3,10 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Mail\OTPMail;
 use App\Models\User;
-use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Validation\Rules;
@@ -36,8 +35,8 @@ class RegisteredUserController extends Controller
     }
 
     $request->validate([
-        'name' => 'required|string|max:255',
-        'email' => 'required|string|lowercase|email|max:255|unique:users',
+        'name' => ['required', 'string', 'max:255'],
+        'email' => ['required', 'string', 'lowercase', 'email', 'max:255'],
         'password' => [
             'required', 
             'confirmed', 
@@ -56,45 +55,16 @@ class RegisteredUserController extends Controller
         'otp' => $otp,
     ]);
 
-    Mail::send('emails/OTPPage', ['otp' => $otp, 'user' => $user->name], function($message) use ($request) {
-        $message->to($request->email, $request->name)->subject('OTP Verification');
-    });
+    try {
+        Mail::to($user->email)->send(new OTPMail($user->otp, $user->name, $user->email));
+    } catch (\Exception $e) {
+        return redirect()->back()->withErrors(['email' => 'Gagal mengirim email OTP. Silakan coba lagi.']);
+    }
 
     // Simpan email di session
     session(['otp_email' => $user->email]);
 
-    return redirect(route('otp.verify'));
+    return redirect()->route('otp.verify');
+
 }
-
-
-
-
-public function verifyOTP()
-{
-    // Ambil email dari session
-    $email = session('otp_email');
-
-    if (!$email) {
-        return redirect(route('register'))->withErrors(['error' => 'Session expired, please register again.']);
-    }
-
-    return Inertia::render('Auth/OTPVerification', [
-        'email' => $email
-    ]);
-}
-
-
-    public function verifyOTPStore(Request $request){
-        $request->validate([
-            'otp' => 'required|max_digits:6',
-        ]);
-
-        $user = User::where('otp', $request->otp)->first();
-
-        if($user){
-            Auth::login($user);
-            return redirect(route('welcome'));
-        }
-        return redirect()->back()->withErrors(['otp' => 'OTP yang Anda masukkan salah!']);
-    }
 }

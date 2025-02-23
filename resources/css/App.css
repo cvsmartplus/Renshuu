@@ -6967,14 +6967,10 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   font-weight: 600;
 }
 
-.cta {
-  color: #062A78;
-}
-
 .btn-cta {
   background-color: #062A78;
   color: #fff;
-  padding: 0.75rem 1.5rem;
+  padding: 0.5rem 1.2rem;
   font-size: 1rem;
   font-weight: 600;
   border-radius: 0.5rem;
@@ -7108,6 +7104,89 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 
 .content p {
   margin-bottom: 1rem;
+}
+
+.form-check-input {
+  width: 1em;
+  height: 1em;
+  margin-top: 0.25em;
+  vertical-align: top;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  appearance: none;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+  border-radius: 0.25em;
+  cursor: pointer;
+}
+
+.form-check-input:checked {
+  background-color: #062A78; /* Warna yang kamu minta */
+  border-color: #062A78;
+}
+
+.form-check-input:focus {
+  border-color: #2659B2; /* Warna lebih terang dari #062A78 */
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(6, 42, 120, 0.25);
+}
+
+.form-check-input:disabled {
+  pointer-events: none;
+  filter: none;
+  opacity: 0.5;
+}
+
+/* Container utama */
+.grid-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #C5E2FF;
+  overflow: hidden;
+}
+
+/* Grid Overlay */
+.grid-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: repeat(50, 1fr); /* Lebih banyak kotak */
+  grid-template-rows: repeat(50, 1fr);
+  width: 100%;
+  height: 100%;
+  gap: 1px; /* Jarak lebih kecil untuk efek lebih rapi */
+  z-index: 0;
+}
+
+/* Kotak dalam grid */
+.grid-box {
+  background-color: rgba(255, 255, 255, 0.318); /* Garis lebih terlihat dengan warna lebih terang */
+  aspect-ratio: 1;
+  transform: scale(0.9);
+  transition: background 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+/* Efek hover lebih smooth */
+.grid-box:hover {
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 1px; /* Memberikan sedikit lengkungan saat di-hover */
+}
+
+/* Konten utama */
+.grid-content {
+  position: relative;
+  z-index: 1;
+}
+
+.alert-success {
+  color: #062A78;
+  background-color: #C5E2FF;
+  border-color: #062A78;
 }
 
 /*# sourceMappingURL=App.css.map */

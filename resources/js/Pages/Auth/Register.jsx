@@ -106,7 +106,6 @@ export default function Register() {
                               value={data.email}
                               className="form-control"
                               autoComplete="username"
-                              isFocused={true}
                               onChange={(e) => setData('email', e.target.value)}
                               required
                           />
@@ -171,10 +170,10 @@ export default function Register() {
                       <p className="text-center">
                         Sudah punya akun?{' '}
                         <a 
-                          href="#" 
-                          className="text-decoration-none cta" 
+                          className="text-decoration-none text-blue" 
                           data-bs-toggle="modal" 
                           data-bs-target="#loginModal"
+                          style={{cursor: 'pointer'}}
                         >
                           Masuk
                         </a>

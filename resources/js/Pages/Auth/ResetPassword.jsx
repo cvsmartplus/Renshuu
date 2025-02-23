@@ -12,6 +12,8 @@ export default function ResetPassword({ token, email }) {
         password: '',
         password_confirmation: '',
     });
+    console.log("Email:", email); // Harusnya ada email
+    console.log("Token:", token); // Harusnya ada token
 
     const submit = (e) => {
         e.preventDefault();
@@ -25,10 +27,13 @@ export default function ResetPassword({ token, email }) {
         <GuestLayout>
             <Head title="Reset Password" />
 
+            <div className="card-body">
+            <h4 className="card-title text-center text-blue mb-3">
+                            <i className="fas fa-unlock-alt"></i> Buat Kata Sandi Baru
+                        </h4>
             <form onSubmit={submit}>
                 <div>
                     <InputLabel htmlFor="email" value="Email" />
-
                     <TextInput
                         id="email"
                         type="email"
@@ -36,14 +41,16 @@ export default function ResetPassword({ token, email }) {
                         value={data.email}
                         className="mt-1 block w-full"
                         autoComplete="username"
+                        disabled={!!data.email} 
                         onChange={(e) => setData('email', e.target.value)}
                     />
+
 
                     <InputError message={errors.email} className="mt-2" />
                 </div>
 
                 <div className="mt-4">
-                    <InputLabel htmlFor="password" value="Password" />
+                    <InputLabel htmlFor="password" value="Kata Sandi" />
 
                     <TextInput
                         id="password"
@@ -62,7 +69,7 @@ export default function ResetPassword({ token, email }) {
                 <div className="mt-4">
                     <InputLabel
                         htmlFor="password_confirmation"
-                        value="Confirm Password"
+                        value="Konfirmasi"
                     />
 
                     <TextInput
@@ -83,12 +90,13 @@ export default function ResetPassword({ token, email }) {
                     />
                 </div>
 
-                <div className="mt-4 flex items-center justify-end">
-                    <PrimaryButton className="ms-4" disabled={processing}>
-                        Reset Password
+                <div className="mt-4 flex">
+                    <PrimaryButton className="btn btn-cta" disabled={processing}>
+                        Reset
                     </PrimaryButton>
                 </div>
             </form>
+            </div>
         </GuestLayout>
     );
 }
