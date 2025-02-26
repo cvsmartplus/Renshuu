@@ -15,7 +15,7 @@ export default function Logmod({ canResetPassword }) {
                         />
                         <div className='mt-3'>
                             <p className="text-center">
-                                Belum punya akun? Ayo <Link href={route('register')} className="text-decoration-none">Daftar</Link>
+                                Belum punya akun? Ayo <Link href={route('register')} className="text-decoration-none text-blue">Daftar</Link>
                             </p>
                         </div>
                     </div>

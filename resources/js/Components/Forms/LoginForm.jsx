@@ -38,6 +38,7 @@ export default function LoginForm({ onSuccess, canResetPassword }) {
                     autoComplete="off"
                     isFocused={true}
                     onChange={(e) => setData('email', e.target.value)}
+                    required
                 />
                 <InputError message={errors.email} />
             </div>
@@ -53,6 +54,7 @@ export default function LoginForm({ onSuccess, canResetPassword }) {
                     autoComplete="off"
                     className="form-control"
                     onChange={(e) => setData('password', e.target.value)}
+                    required
                 />
                 <InputError message={errors.password} />
             </div>

@@ -9,7 +9,7 @@ export default function PrimaryButton({
             {...props}
             className={
                 `${
-                    disabled && 'opacity-25'
+                    disabled
                 } ` + className
             }
             disabled={disabled}

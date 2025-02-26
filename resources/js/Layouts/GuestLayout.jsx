@@ -1,16 +1,14 @@
-export default function GuestLayout({ status, children, width = "400px" }) {
-    return (
-        <div className="d-flex justify-content-center align-items-center vh-100">
-            <div className="card shadow-lg p-3" style={{ width }}>
-                <div className="card-body">
-                    {status && (
-                        <div className="alert alert-success text-center">
-                            {status}
-                        </div>
-                    )}
-                    {children}
-                </div>
-            </div>
+import GridBackground from "@/Components/UI/GridBackground";
+
+export default function GuestLayout({ status, children }) {
+  return (
+    <GridBackground>
+      <div className="card shadow-lg p-3" style={{ width: "500px", maxWidth: "90%" }}>
+        <div className="card-body">
+          {status && <div className="alert alert-success text-center">{status}</div>}
+          {children}
         </div>
-    );
+      </div>
+    </GridBackground>
+  );
 }

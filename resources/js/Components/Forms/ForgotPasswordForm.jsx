@@ -28,6 +28,7 @@ export default function ForgotPasswordForm() {
                         value={data.email}
                         className="form-control"
                         isFocused={true}
+                        required
                         placeholder="Masukkan email Anda"
                         onChange={(e) => setData('email', e.target.value)}
                     />
