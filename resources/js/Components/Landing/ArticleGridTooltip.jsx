@@ -2,8 +2,8 @@ import { Link, usePage } from "@inertiajs/react";
 import React from "react";
 import ArticleGrid from "../Common/ArticleGrid";
 
-const ArticleCards = () => {
-    const { articles } = usePage().props; // Mengambil data artikel dari props yang dikirim oleh backend
+const ArticleGridTooltip = () => {
+    const { articles } = usePage().props; 
 
     return (
         <div className="container text-center my-5">
@@ -16,4 +16,4 @@ const ArticleCards = () => {
     );
 };
 
-export default ArticleCards;
+export default ArticleGridTooltip;

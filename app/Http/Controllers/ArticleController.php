@@ -39,21 +39,28 @@ class ArticleController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Article $artikel)
-    {
-        return Inertia::render('Article/SingleArticle', [
-            'article' => [
-                'id' => $artikel->id,
-                'title' => $artikel->title,
-                'slug' => $artikel->slug,
-                'content' => $artikel->content,
-                'excerpt' => $artikel->excerpt,
-                'media_path' => $artikel->media_path,
-                'created_at' => $artikel->created_at->format('d M Y'),
-                'author' => $artikel->author->name ?? 'Anonim',
-            ]
-        ]);
-    }
+public function show(Article $artikel)
+{
+    $relatedArticles = Article::where('id', '!=', $artikel->id)
+                            ->latest()
+                            ->take(4)
+                            ->get();
+
+    return Inertia::render('Article/SingleArticle', [
+        'article' => [
+            'id' => $artikel->id,
+            'title' => $artikel->title,
+            'slug' => $artikel->slug,
+            'content' => $artikel->content,
+            'excerpt' => $artikel->excerpt,
+            'media_path' => $artikel->media_path,
+            'created_at' => $artikel->created_at->format('d M Y'),
+            'author' => $artikel->author->name ?? 'Anonim',
+        ],
+        'relatedArticles' => $relatedArticles
+    ]);
+}
+
 
 
     /**

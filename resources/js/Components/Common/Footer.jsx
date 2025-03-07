@@ -61,7 +61,7 @@ export default function Footer() {
                                     className="mb-0 text-center py-3" 
                                     style={{ fontSize: "14px", color: "#666" }}
                                 >
-                                    Copyright &copy; {new Date().getFullYear()} Renshuu adalah merek dari <Link href="https://cvsmartplus.com" target="_blank">CV Smartplus Indonesia</Link>
+                                    Copyright &copy; {new Date().getFullYear()} Renshuu adalah merek dari <a href="https://cvsmartplus.com" target="_blank">CV Smartplus Indonesia</a>
                                 </p>
                             </div>
                         </div>

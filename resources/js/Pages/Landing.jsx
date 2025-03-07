@@ -1,6 +1,6 @@
-import ArticleCards from "@/Components/Landing/ArticleGridTooltip";
+import ArticleGridTooltip from "@/Components/Landing/ArticleGridTooltip";
 import Counter from "@/Components/Landing/Counter";
-import CourseGrid01 from "@/Components/Landing/CourseGridTooltip";
+import CourseCards from "@/Components/Landing/CourseGridTooltip";
 import Features from "@/Components/Landing/Features";
 import Partner from "@/Components/Landing/Partner";
 import Banner from "@/Components/Landing/Banner";
@@ -17,9 +17,9 @@ export default function Landing({title}) {
         <Features />
         <Counter />
         <StepFlow />
-        <CourseGrid01 />
+        <CourseCards />
         <Partner/>
-        <ArticleCards />
+        <ArticleGridTooltip />
         </Layout>
         </>
     )

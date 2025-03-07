@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             ManagerSeeder::class,     // Lalu ini
             CourseAdminSeeder::class, // Jalankan ini dulu
             ArticleSeeder::class,     // Baru seeder artikel
+            CourseSeeder::class,
         ]);
     }
 }
