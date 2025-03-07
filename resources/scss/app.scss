@@ -281,3 +281,14 @@ h1, h2, h3, h4, h5, h6 {
     background-color: $sidbar;
     border-color: $ctabtn;
   }
+
+  .card {
+  height: 100%; /* Pastikan semua card memiliki tinggi yang sama */
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 250px; /* Bisa disesuaikan sesuai kebutuhan */
+}

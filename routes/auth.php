@@ -15,6 +15,7 @@ use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ChartController;
 use App\Http\Controllers\ComponentpageController;
+use App\Http\Controllers\CourseController;
 use App\Http\Controllers\CryptoCurrencyController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FormsController;
@@ -75,6 +76,10 @@ Route::middleware('auth')->group(function () {
 
     Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])
         ->name('logout');
+
+
+    Route::get('courses', [CourseController::class, 'index'])->name('course.index');
+    Route::get('courses/{slug}', [CourseController::class, 'show'])->name('course.show');
 });
 
 Route::controller(DashboardController::class)->group(function () {
