@@ -35,7 +35,7 @@ class Password implements Rule, DataAwareRule, ValidatorAwareRule
      *
      * @var int
      */
-    protected $min = 5;
+    protected $min = 8;
 
     /**
      * The maximum size of the password.
@@ -150,7 +150,7 @@ class Password implements Rule, DataAwareRule, ValidatorAwareRule
                             ? call_user_func(static::$defaultCallback)
                             : static::$defaultCallback;
 
-        return $password instanceof Rule ? $password : static::min(5);
+        return $password instanceof Rule ? $password : static::min(8);
     }
 
     /**
