@@ -21,6 +21,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FormsController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\InvoiceController;
+use App\Http\Controllers\JobsController;
 use App\Http\Controllers\RoleandaccessController;
 use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\TableController;
@@ -80,6 +81,9 @@ Route::middleware('auth')->group(function () {
 
     Route::get('courses', [CourseController::class, 'index'])->name('course.index');
     Route::get('courses/{slug}', [CourseController::class, 'show'])->name('course.show');
+
+    Route::get('jobs', [JobsController::class, 'index'])->name('job.index');
+    Route::get('jobs/{slug}', [JobsController::class, 'show'])->name('job.show');
 });
 
 Route::controller(DashboardController::class)->group(function () {

@@ -17,10 +17,8 @@ return new class extends Migration
         $table->string('slug')->unique(); 
         $table->text('content');
         $table->text('excerpt')->nullable();
-        $table->foreignId('author_id')->constrained('course_admins')->onDelete('cascade');
-        $table->foreignId('manager_id')->constrained('managers')->onDelete('cascade');
         $table->text('media_path')->nullable();
-        $table->enum('status', ['draft', 'published'])->default('draft'); // Status artikel
+        $table->enum('status', ['draft', 'published'])->default('draft'); 
         $table->timestamps();
     });
 }

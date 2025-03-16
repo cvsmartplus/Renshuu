@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
-            $table->foreignId('manager_id')->references('id')->on('managers');
             $table->timestamps();
         });
     }

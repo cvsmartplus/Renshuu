@@ -23,7 +23,7 @@ const ArticleCard = ({ article }) => {
         <div className="card-body d-flex flex-column text-start">
           <h5 className="card-title fs-5 text-start">{article.title}</h5>
           <p className="card-text flex-grow-1 text-start">{article.excerpt}</p>
-          <Link href={route("artikel.show", article.slug)} className="text-blue text-start text-decoration-none mt-auto">
+          <Link href={route("article.show", article.slug)} className="text-blue text-start text-decoration-none mt-auto">
             Selengkapnya &gt;
           </Link>
 

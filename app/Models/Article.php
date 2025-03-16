@@ -10,7 +10,7 @@ class Article extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'slug', 'content', 'author_id', 'manager_id', 'media_path', 'status', 'category_id', 'excerpt'];
+    protected $fillable = ['title', 'slug', 'content', 'author_id', 'media_path', 'status', 'category_id', 'excerpt'];
 
     // Event untuk membuat slug otomatis
     public static function boot()

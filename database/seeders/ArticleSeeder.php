@@ -130,8 +130,6 @@ class ArticleSeeder extends Seeder
                 'slug' => $slug,
                 'content' => $article['content'],
                 'excerpt' => $article['description'],
-                'author_id' => 1,
-                'manager_id' => 1,
                 'media_path' => $article['image'],
                 'status' => 'published',
                 'created_at' => now(),
