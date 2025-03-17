@@ -11,12 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('biodata_companys', function (Blueprint $table) {
+        Schema::create('biodata_companies', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
             $table->text('address');
             $table->string('telephone');
             $table->string('email')->unique();
-            $table->string('fax');
+            $table->string('website')->nullable();
+            $table->string('logo')->nullable();
+            $table->text('description')->nullable();
+            $table->string('slug')->unique();
+            $table->timestamps();
         });
     }
 
@@ -25,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('biodata_companys');
+        Schema::dropIfExists('biodata_companies');
     }
 };

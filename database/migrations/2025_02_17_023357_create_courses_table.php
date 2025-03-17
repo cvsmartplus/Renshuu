@@ -19,8 +19,6 @@ return new class extends Migration
             $table->decimal('price', 10, 2)->default(0.00); // Harga kursus
             $table->string('trainers_name'); // Nama pelatih/pengajar
             $table->string('group_chat_link')->nullable(); // Link grup diskusi (Opsional)
-            $table->foreignId('course_admin_id')->constrained('course_admins')->onDelete('cascade'); // Admin kursus
-            $table->foreignId('manager_id')->constrained('managers')->onDelete('cascade'); // Manajer kursus
             $table->string('image')->nullable(); // Gambar kursus
             $table->integer('duration')->default(0); // Durasi kursus dalam jam
             $table->enum('level', ['Beginner', 'Intermediate', 'Advanced'])->default('Beginner'); // Level kesulitan

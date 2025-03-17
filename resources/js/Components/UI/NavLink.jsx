@@ -15,12 +15,12 @@ export default function NavLink() {
                     </ResponsiveNavLink>
                 </li>
                 <li className="nav-item">
-                    <ResponsiveNavLink href="#" active={route().current("pekerjaan")}>
+                    <ResponsiveNavLink href={route("job.index")} active={route().current("job.index")}>
                         Pekerjaan
                     </ResponsiveNavLink>
                 </li>
                 <li className="nav-item">
-                    <ResponsiveNavLink href={route("artikel.index")} active={route().current("artikel.index")}>
+                    <ResponsiveNavLink href={route("article.index")} active={route().current("article.index")}>
                         Artikel
                     </ResponsiveNavLink>
                 </li>

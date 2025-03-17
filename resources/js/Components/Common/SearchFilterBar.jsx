@@ -28,17 +28,19 @@ export default function SearchFilterBar({
                 <i className="fas fa-search text-muted"></i>
               </label>
               <input
-                type="search"
-                id="search"
-                name="search"
-                className="form-control border-start-0"
-                placeholder={placeholder}
-                value={searchTerm}
-                onChange={(e) => {
-                    setSearchTerm(e.target.value);
-                    console.log("Search Term:", e.target.value); // 🟢 Debugging log
-                }}
-            />
+                  type="search"
+                  id="search"
+                  name="search"
+                  className="form-control border-start-0"
+                  placeholder={placeholder}
+                  value={searchTerm}
+                  onChange={(e) => {
+                      const value = e.target.value;
+                      setSearchTerm(value); // Pastikan nilai state diperbarui
+                      console.log("Search Term:", value);
+                  }}
+              />
+
             </div>
 
             {/* Dropdown Filter */}

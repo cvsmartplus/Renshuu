@@ -66,9 +66,10 @@ export default function LoginForm({ onSuccess, canResetPassword }) {
                         name="remember"
                         checked={data.remember}
                         id="remember"
+                        label="Ingatkan Saya" // Langsung pakai prop `label`
                         onChange={(e) => setData('remember', e.target.checked)}
                     />
-                    <label htmlFor="remember" className="form-check-label ms-2">Ingatkan Saya</label>
+
                 </div>
                 {canResetPassword && (
                     <Link 

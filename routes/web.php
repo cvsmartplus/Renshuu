@@ -23,8 +23,8 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 
-Route::resource('artikel', ArticleController::class)->except(['show']);
-Route::get('/artikel/{artikel:slug}', [ArticleController::class, 'show'])->name('artikel.show');
+Route::resource('article', ArticleController::class)->except(['show']);
+Route::get('/article/{artikel:slug}', [ArticleController::class, 'show'])->name('article.show');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

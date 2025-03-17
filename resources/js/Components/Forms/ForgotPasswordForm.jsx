@@ -1,12 +1,17 @@
+import { useEffect } from "react";
 import { useForm } from "@inertiajs/react";
 import InputError from "../UI/InputError";
 import PrimaryButton from "../UI/PrimaryButton";
 import TextInput from "../UI/TextInput";
 
-export default function ForgotPasswordForm() {
+export default function ForgotPasswordForm({ setIsLoading }) {
     const { data, setData, post, processing, errors } = useForm({
         email: '',
     });
+
+    useEffect(() => {
+        setIsLoading(processing); // Update loading state sesuai `processing`
+    }, [processing, setIsLoading]);
 
     const submit = (e) => {
         e.preventDefault();

@@ -9,7 +9,7 @@ const ArticleGridTooltip = () => {
         <div className="container text-center my-5">
             <h2 className="fw-bold mb-5">Baca juga informasi beragam informasinya</h2>
             <ArticleGrid articles={articles} />
-            <Link href={route("artikel.index")} className="btn btn-cta mt-5">
+            <Link href={route("article.index")} className="btn btn-cta mt-5">
                 Lihat Selengkapnya
             </Link>
         </div>

@@ -16,7 +16,6 @@ class Course extends Model
         'trainers_name',
         'group_chat_link',
         'course_admin_id',
-        'manager_id',
         'image',
         'duration',
         'level',

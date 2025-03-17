@@ -11,12 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('company_admins', function (Blueprint $table) {
+        Schema::create('job_categories', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('biodata_company')->references('id')->on('biodata_companys');
-            $table->string('username');
-            $table->string('password');
-            $table->foreignId('manager_id')->references('id')->on('managers');
+            $table->string('name')->unique();
             $table->timestamps();
         });
     }
@@ -26,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('company_admins');
+        Schema::dropIfExists('job_categories');
     }
 };
