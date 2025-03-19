@@ -40,17 +40,29 @@
     "src": "node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff2"
   },
   "resources/css/App.css": {
-    "file": "assets/App-BEjaSDQd.css",
+    "file": "assets/App-Dl6mR0gs.css",
     "src": "resources/css/App.css",
     "isEntry": true
   },
+  "resources/js/Pages/Landing.jsx": {
+    "file": "assets/Landing-k5id75jk.js",
+    "name": "Landing",
+    "src": "resources/js/Pages/Landing.jsx",
+    "isEntry": true,
+    "css": [
+      "assets/Landing-DnVUw_vK.css"
+    ]
+  },
   "resources/js/app.jsx": {
-    "file": "assets/app-AXJH2-gz.js",
+    "file": "assets/app-CSXXv81H.js",
     "name": "app",
     "src": "resources/js/app.jsx",
     "isEntry": true,
+    "imports": [
+      "resources/js/Pages/Landing.jsx"
+    ],
     "css": [
-      "assets/app-D5FpnrhY.css"
+      "assets/app-CKnQFYxH.css"
     ],
     "assets": [
       "assets/bootstrap-icons-BtvjY1KL.woff2",

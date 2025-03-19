@@ -7,6 +7,7 @@
     }],
     chart: {
       height: 264,
+      width: 500,
       type: 'line',
       toolbar: {
         show: false

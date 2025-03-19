@@ -4,8 +4,8 @@
     </button>
     <div>
         <a href="{{ route('index') }}" class="sidebar-logo">
-            <img src="{{ asset('assets/images/logo.png') }}" alt="site logo" class="light-logo">
-            <img src="{{ asset('assets/images/logo-light.png') }}" alt="site logo" class="dark-logo">
+            <img src="{{ asset('images/renshuu-logo.png') }}" alt="site logo" class="light-logo">
+            <img src="{{ asset('images/renshuu-logo.png') }}" alt="site logo" class="dark-logo">
             <img src="{{ asset('assets/images/logo-icon.png') }}" alt="site logo" class="logo-icon">
         </a>
     </div>
@@ -13,18 +13,27 @@
         <ul class="sidebar-menu" id="sidebar-menu">
             <li class="dropdown">
                 <a  href="javascript:void(0)">
-                    <iconify-icon icon="solar:home-smile-angle-outline" class="menu-icon"></iconify-icon>
-                    <span>Dashboard</span>
+                    
+                    <span>Beranda</span>
                 </a>
                 <ul class="sidebar-submenu">
                     <li>
-                        <a href="{{ route('index') }}"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i> AI</a>
+                        <a href="{{ route('index') }}">
+                            <iconify-icon icon="bi-book" class="menu-icon"></iconify-icon>
+                            <span>Kursus</span>
+                        </a>
                     </li>
                     <li>
-                    <a href="{{ route('index2') }}"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> CRM</a>
+                        <a href="{{ route('index2') }}">
+                            <iconify-icon icon="bi-briefcase" class="menu-icon"></iconify-icon>
+                            <span>Pekerjaan</span>
+                        </a>
                     </li>
                     <li>
-                    <a href="{{ route('index3') }}"><i class="ri-circle-fill circle-icon text-info-main w-auto"></i> eCommerce</a>
+                        <a href="{{ route('index3') }}"> 
+                            <iconify-icon icon="bi-file-text" class="menu-icon"></iconify-icon>
+                            <span>Artikel</span>
+                        </a>
                     </li>
                     <li>
                     <a href="{{ route('index4') }}"><i class="ri-circle-fill circle-icon text-danger-main w-auto"></i> Cryptocurrency</a>
@@ -49,9 +58,93 @@
                     </li>
                 </ul>
             </li>
+            <li class="dropdown">
+                <a  href="javascript:void(0)">
+                    <span>Artikel</span>
+                </a>
+                <ul class="sidebar-submenu">
+                    <li>
+                        <a href="{{ route('articleadmin') }}"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i>
+                            <iconify-icon icon="bi-file-text" class="menu-icon"></iconify-icon>
+                            <span>Artikel</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('buatarticle') }}"><i class="ri-circle-fill circle-icon text-warning-600 w-auto"></i> 
+                            <iconify-icon icon="bi-pencil-square" class="menu-icon"></iconify-icon>
+                            <span>Buat Artikel</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a  href="javascript:void(0)">
+                    <span>Kursus</span>
+                </a>
+                <ul class="sidebar-submenu">
+                    <li>
+                        <a href="{{ route('adminkursus') }}"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i>
+                            <iconify-icon icon="bi-book" class="menu-icon"></iconify-icon>
+                            <span>Kursus</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('tambahkursus') }}"><i class="ri-circle-fill circle-icon text-warning-600 w-auto"></i>
+                            <iconify-icon icon="bi-pencil-square" class="menu-icon"></iconify-icon>
+                            <span>Tambah Kursus</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a  href="javascript:void(0)">
+                    <span>Pekerjaan</span>
+                </a>
+                <ul class="sidebar-submenu">
+                    <li>
+                        <a href="{{ route('pekerjaan') }}"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i>
+                            <iconify-icon icon="bi-briefcase" class="menu-icon"></iconify-icon>
+                            <span>Pekerjaan</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('tambahloker') }}"><i class="ri-circle-fill circle-icon text-warning-600 w-auto"></i>
+                            <iconify-icon icon="bi-briefcase-fill" class="menu-icon"></iconify-icon>
+                            <span>Tambah Loker</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('kelolapelamar') }}"><i class="ri-circle-fill circle-icon text-warning-600 w-auto"></i>
+                            <iconify-icon icon="bi-people" class="menu-icon"></iconify-icon>
+                            <span>Kelola Pelamar</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="{{ route('email') }}">
+                    <iconify-icon icon="bi-file-earmark-text"></iconify-icon>
+                    <span>Laporan</span>
+                </a>
+            </li>
+            <li class="dropdown">
+                <a href="javascript:void(0)">
+                    <iconify-icon icon="bi-person-badge" class="menu-icon"></iconify-icon>
+                    <span class="mx-2">Peran &</span>
+                    <div class="d-block">Riwayat</div>
+                </a>
+                <ul class="sidebar-submenu">
+                    <li>
+                        <a href="{{ route('KelolaAkunAdmin') }}"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i> Kelola Akun Admin</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('RiwayatLog') }}"><i class="ri-circle-fill circle-icon text-warning-600 w-auto"></i> Riwayat Log</a>
+                    </li>
+                </ul>
+            </li>
             <li class="sidebar-menu-group-title">Application</li>
             <li>
-                  <a href="{{ route('email') }}">
+                <a href="{{ route('email') }}">
                     <iconify-icon icon="mage:email" class="menu-icon"></iconify-icon>
                     <span>Email</span>
                 </a>
@@ -426,4 +519,21 @@
             </li>
         </ul>
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll(".dropdown > a").forEach(function (dropdownToggle) {
+                dropdownToggle.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    let submenu = this.nextElementSibling;
+        
+                    // Toggle menu tanpa menutup menu lain
+                    submenu.classList.toggle("open");
+        
+                    // Tambahkan class 'active' ke parent agar terlihat terbuka
+                    this.parentElement.classList.toggle("active");
+                });
+            });
+        });
+        </script>
+        
 </aside>
