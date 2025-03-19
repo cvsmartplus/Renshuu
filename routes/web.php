@@ -1,5 +1,6 @@
 <?php
 
+
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ProfileController;
 use App\Models\Article;
@@ -38,7 +39,6 @@ Route::get('/test-500', function () {
 Route::get('/test-403', function () {
     abort(403);
 });
-
 
 Route::fallback(function () {
     return response()->view('errors.404', [], 404);

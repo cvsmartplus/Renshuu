@@ -12555,6 +12555,7 @@ select option {
   border: none;
   position: initial;
   color: var(--text-secondary-light);
+  
 }
 
 .card .card-header {
