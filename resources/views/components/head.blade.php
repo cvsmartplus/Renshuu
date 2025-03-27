@@ -29,6 +29,8 @@
     <link rel="stylesheet"  href="{{ asset('assets/css/lib/prism.css') }}">
     <!-- file upload css -->
     <link rel="stylesheet"  href="{{ asset('assets/css/lib/file-upload.css') }}">
+    {{-- multi-step --}}
+    <link rel="stylesheet" href="{{ asset('assets/css/lib/multistep.css') }}">
 
     <link rel="stylesheet"  href="{{ asset('assets/css/lib/audioplayer.css') }}">
     <!-- main css -->

@@ -9,249 +9,160 @@
 @endphp
 
 @section('content')
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-6 mb-4">
-                <div class="card-header d-flex flex-wrap align-items-center">
-                    <div class="d-flex flex-wrap align-items-center">
-                        <a href="{{ route('invoiceAdd') }}" class="btn btn-sm btn-primary-600"><i class="ri-add-line"></i>
-                            Create Invoice
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6 text-end mb-4">
-                <div class="card-header d-flex flex-row-reverse align-items-center gap-3">
-                    <div class="d-flex felx-wrap align-items-center gap-3">
-                        <a href="#" class="btn btn-sm btn-danger-600"><i class="ri-delete-bin-line"></i>
-                            Hapus Loker
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <div class="text-sm-end fw-bold d-none d-sm-block">Pilih terlebih dahulu loker apa yang ingin anda hapus
-                </div>
-            </div>
-        </div>
-        <div class="card my-3">
-            <div class="card-header d-flex flex-wrap align-items-center justify-content-end gap-3">
-                <div class="d-flex flex-wrap align-items-center gap-3">
-                    <div class="d-flex justify-content-end align-items-center gap-3">
-                        <!-- Pencarian -->
-                        <div class="d-flex align-items-center text-secondary cursor-pointer">
-                            <i class="ri-search-line"></i>
-                            <span class="ms-2">Pencarian</span>
-                        </div>
-                        <!-- Filter -->
-                        <div class="d-flex align-items-center text-secondary cursor-pointer">
-                            <i class="ri-filter-fill"></i>
-                            <span class="ms-2">Filter</span>
-                        </div>
-                        <!-- Pilih -->
-                        <div class="d-flex align-items-center text-secondary cursor-pointer">
-                            <i class="ri-grid-line"></i>
-                            <span class="ms-2">Pilih</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row m-1">
-            <div class="card shadow-sm border-0 position-relative" style="max-width: 450px;">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="row mb-3">
-                            <div class="col-12">
-                                <div class="d-flex justify-content-between align-items-start">
-                                    <!-- Logo Perusahaan -->
-                                    <img src="{{ asset('images/managers/ADA-logo.png') }}" alt="Logo" class="me-2 rounded"
-                                        style="width: 100px; height: 50px;">
-                                    <div class="d-flex justify-content-end">
-                                        <button>
-                                        <i class="ri-bookmark-line"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="row">
-                            <div class="col">
-                                <div class="w-100">
-                                    <!-- Nama Pekerjaan -->
-                                    <h6 class="text-hover-lilac-600">Sales Associate</h6>
-                                    <!-- Nama Perusahaan -->
-                                    <p class="mb-0 fw-bold">PT Astra International Tbk</p>
-                                    <!-- Lokasi -->
-                                    <p class="text-muted mb-0">Karawang</p>
-                                    <!-- Posisi -->
-                                    <p class="text-muted mb-1">Designer (UI/UX Designer, Web Designer)</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-footer bg-white d-flex justify-content-between text-muted small">
-                            <span class="text-start">1 Jam yang lalu</span>
-                            <a href="#" class="text-decoration-none text-end">Selengkapnya &gt;</a>
-                        </div>
-                    </div>
-                    <!-- Ikon Bookmark -->
-                </div>
-            </div>
-            <div class="card shadow-sm border-0 position-relative ms-110" style="max-width: 450px;">
-                <div class="card-body d-flex flex-row-reverse">
-                    <div class="row ">
-                        <div class="row mb-3">
-                            <div class="col-12">
-                                <div class="d-flex justify-content-between align-items-start">
-                                    <!-- Logo Perusahaan -->
-                                    <img src="{{ asset('images/managers/ADA-logo.png') }}" alt="Logo" class="me-2 rounded"
-                                        style="width: 100px; height: 50px;">
-                                    <div class="d-flex justify-content-end">
-                                        <button>
-                                        <i class="ri-bookmark-line"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="row">
-                            <div class="col">
-                                <div class="w-100">
-                                    <!-- Nama Pekerjaan -->
-                                    <h6 class="text-hover-lilac-600">Sales Associate</h6>
-                                    <!-- Nama Perusahaan -->
-                                    <p class="mb-0 fw-bold">PT Astra International Tbk</p>
-                                    <!-- Lokasi -->
-                                    <p class="text-muted mb-0">Karawang</p>
-                                    <!-- Posisi -->
-                                    <p class="text-muted mb-1">Designer (UI/UX Designer, Web Designer)</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-footer bg-white d-flex justify-content-between text-muted small">
-                            <span class="text-start">1 Jam yang lalu</span>
-                            <a href="#" class="text-decoration-none text-end">Selengkapnya &gt;</a>
-                        </div>
-                    </div>
-                    <!-- Ikon Bookmark -->
-                </div>
-            </div>
-        </div>
+<div class="container-fluid">
+    <!-- Baris Tombol -->
+    <div class="row">
+        <div class="col-12 d-flex justify-content-between align-items-center">
+            <button class="btn btn-primary">+ Create Invoice</button>
+            <button class="btn btn-danger text-end" style="background-color: #D90000;">
+                <i class="ri-delete-bin-6-line"></i> Hapus Loker
+            </button>
+        </div> 
+    </div>
 
-        <div class="row">
-            <div class="card shadow-sm border-0 position-relative ms-110" style="max-width: 450px;">
-                <div class="card-body d-flex flex-row-reverse">
-                    <div class="row ">
-                        <div class="row mb-3">
-                            <div class="col-12">
-                                <div class="d-flex justify-content-between align-items-start">
-                                    <!-- Logo Perusahaan -->
-                                    <img src="{{ asset('images/managers/ADA-logo.png') }}" alt="Logo" class="me-2 rounded"
-                                        style="width: 100px; height: 50px;">
-                                    <div class="d-flex justify-content-end">
-                                        <button>
-                                        <i class="ri-bookmark-line"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="row">
-                            <div class="col">
-                                <div class="w-100">
-                                    <!-- Nama Pekerjaan -->
-                                    <h6 class="text-hover-lilac-600">Sales Associate</h6>
-                                    <!-- Nama Perusahaan -->
-                                    <p class="mb-0 fw-bold">PT Astra International Tbk</p>
-                                    <!-- Lokasi -->
-                                    <p class="text-muted mb-0">Karawang</p>
-                                    <!-- Posisi -->
-                                    <p class="text-muted mb-1">Designer (UI/UX Designer, Web Designer)</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-footer bg-white d-flex justify-content-between text-muted small">
-                            <span class="text-start">1 Jam yang lalu</span>
-                            <a href="#" class="text-decoration-none text-end">Selengkapnya &gt;</a>
-                        </div>
-                        <div class="card shadow-sm border-0 position-relative ms-110" style="max-width: 450px;">
-                            <div class="card-body d-flex flex-row-reverse">
-                                    <div class="row mb-3">
-                                        <div class="col-12">
-                                            <div class="d-flex justify-content-between align-items-start">
-                                                <!-- Logo Perusahaan -->
-                                                <img src="{{ asset('images/managers/ADA-logo.png') }}" alt="Logo" class="me-2 rounded"
-                                                    style="width: 100px; height: 50px;">
-                                                <div class="d-flex justify-content-end">
-                                                    <button>
-                                                    <i class="ri-bookmark-line"></i>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="row">
-                                        <div class="col">
-                                            <div class="w-100">
-                                                <!-- Nama Pekerjaan -->
-                                                <h6 class="text-hover-lilac-600">Sales Associate</h6>
-                                                <!-- Nama Perusahaan -->
-                                                <p class="mb-0 fw-bold">PT Astra International Tbk</p>
-                                                <!-- Lokasi -->
-                                                <p class="text-muted mb-0">Karawang</p>
-                                                <!-- Posisi -->
-                                                <p class="text-muted mb-1">Designer (UI/UX Designer, Web Designer)</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card-footer bg-white d-flex justify-content-between text-muted small">
-                                        <span class="text-start">1 Jam yang lalu</span>
-                                        <a href="#" class="text-decoration-none text-end">Selengkapnya &gt;</a>
-                                    </div>
-                                <!-- Ikon Bookmark -->
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Ikon Bookmark -->
-                </div>
+    <!-- Info Hapus Loker -->
+    <div class="row">
+        <div class="col">
+            <div class="text-sm-end fw-bold d-none d-sm-block">
+                Pilih terlebih dahulu loker apa yang ingin Anda hapus
             </div>
-
-        </div>
-
-        <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mt-24">
-            <span class="ms-1">menampilkan 1 dari 1 entri</span>
-            <ul class="pagination d-flex flex-wrap align-items-center gap-2 justify-content-center">
-                <li class="page-item">
-                    <a class="page-link text-secondary-light fw-medium radius-4 border-0 px-10 py-10 d-flex align-items-center justify-content-center h-32-px w-32-px bg-base"
-                        href="javascript:void(0)">
-                        <iconify-icon icon="ep:d-arrow-left" class="text-xl"></iconify-icon>
-                    </a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link bg-primary-600 text-white fw-medium radius-4 border-0 px-10 py-10 d-flex align-items-center justify-content-center h-32-px w-32-px"
-                        href="javascript:void(0)">1</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link bg-primary-50 text-secondary-light fw-medium radius-4 border-0 px-10 py-10 d-flex align-items-center justify-content-center h-32-px w-32-px"
-                        href="javascript:void(0)">2</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link bg-primary-50 text-secondary-light fw-medium radius-4 border-0 px-10 py-10 d-flex align-items-center justify-content-center h-32-px w-32-px"
-                        href="javascript:void(0)">3</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link text-secondary-light fw-medium radius-4 border-0 px-10 py-10 d-flex align-items-center justify-content-center h-32-px w-32-px bg-base"
-                        href="javascript:void(0)">
-                        <iconify-icon icon="ep:d-arrow-right" class="text-xl"></iconify-icon>
-                    </a>
-                </li>
-            </ul>
         </div>
     </div>
+
+    <!-- Filter, Pencarian, dan Pilih -->
+    <div class="card my-3">
+        <div class="card-header d-flex flex-wrap align-items-center justify-content-end gap-3">
+            <div class="d-flex align-items-center text-secondary cursor-pointer">
+                <i class="ri-search-line"></i> <span class="ms-2">Pencarian</span>
+            </div>
+            <div class="d-flex align-items-center text-secondary cursor-pointer">
+                <i class="ri-filter-fill"></i> <span class="ms-2">Filter</span>
+            </div>
+            <div class="d-flex align-items-center text-secondary cursor-pointer">
+                <i class="ri-grid-line"></i> <span class="ms-2">Pilih</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Daftar Loker -->
+    <div class="row row-cols-1 row-cols-md-2 g-4 mb-3">
+        <div class="col">
+            <div class="card shadow-sm border-0 position-relative w-100">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-6">
+                            <img src="{{ asset('images/managers/ADA-logo.png') }}" alt="Logo" 
+                                 class="me-2 rounded" style="width: 100px; height: 50px;">
+                        </div>
+                    </div>
+
+                    <div class="w-100 mt-2">
+                        <h6 class="text-hover-lilac-600">Sales Associate</h6>
+                        <p class="mb-0 fw-bold">PT Astra International Tbk</p>
+                        <p class="text-muted mb-0">Karawang</p>
+                        <p class="text-muted mb-1">Designer (UI/UX Designer, Web Designer)</p>
+                    </div>
+                    <hr>
+                    <div class="bg-white d-flex justify-content-between text-muted small">
+                        <span class="text-start me-1">1 Jam yang lalu</span>
+                        <a href="{{route('singleloker')}}" class="text-decoration-none text-end ms-1 hover-text-primary">Selengkapnya &gt;</a>
+                    </div>
+                    
+                    <div class="position-absolute top-0 end-0 mt-2 me-2">
+                        <button class="btn btn-light"><i class="ri-bookmark-line"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card shadow-sm border-0 position-relative w-100">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-6">
+                            <img src="{{ asset('images/managers/ADA-logo.png') }}" alt="Logo" 
+                                 class="me-2 rounded" style="width: 100px; height: 50px;">
+                        </div>
+                    </div>
+
+                    <div class="w-100 mt-2">
+                        <h6 class="text-hover-lilac-600">Sales Associate</h6>
+                        <p class="mb-0 fw-bold">PT Astra International Tbk</p>
+                        <p class="text-muted mb-0">Karawang</p>
+                        <p class="text-muted mb-1">Designer (UI/UX Designer, Web Designer)</p>
+                    </div>
+                    <hr>
+                    <div class="bg-white d-flex justify-content-between text-muted small">
+                        <span class="text-start me-1">1 Jam yang lalu</span>
+                        <a href="{{route('singleloker')}}" class="text-decoration-none text-end ms-1 hover-text-primary">Selengkapnya &gt;</a>
+                    </div>
+
+                    <div class="position-absolute top-0 end-0 mt-2 me-2">
+                        <button class="btn btn-light"><i class="ri-bookmark-line"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+        <div class="col">
+            <div class="card shadow-sm border-0 position-relative w-100">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-6">
+                            <img src="{{ asset('images/managers/ADA-logo.png') }}" alt="Logo" 
+                                 class="me-2 rounded" style="width: 100px; height: 50px;">
+                        </div>
+                    </div>
+
+                    <div class="w-100 mt-2">
+                        <h6 class="text-hover-lilac-600">Sales Associate</h6>
+                        <p class="mb-0 fw-bold">PT Astra International Tbk</p>
+                        <p class="text-muted mb-0">Karawang</p>
+                        <p class="text-muted mb-1">Designer (UI/UX Designer, Web Designer)</p>
+                    </div>
+                    <hr>
+                    <div class="bg-white d-flex justify-content-between text-muted small">
+                        <span class="text-start me-1">1 Jam yang lalu</span>
+                        <a href="{{route('singleloker')}}" class="text-decoration-none text-end ms-1 hover-text-primary">Selengkapnya &gt;</a>
+                    </div>
+
+                    <div class="position-absolute top-0 end-0 mt-2 me-2">
+                        <button class="btn btn-light"><i class="ri-bookmark-line"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card shadow-sm border-0 position-relative w-100">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-6">
+                            <img src="{{ asset('images/managers/ADA-logo.png') }}" alt="Logo" 
+                                 class="me-2 rounded" style="width: 100px; height: 50px;">
+                        </div>
+                    </div>
+
+                    <div class="w-100 mt-2">
+                        <h6 class="hover-text-primary">Sales Associate</h6>
+                        <p class="mb-0 fw-bold">PT Astra International Tbk</p>
+                        <p class="text-muted mb-0">Karawang</p>
+                        <p class="text-muted mb-1">Designer (UI/UX Designer, Web Designer)</p>
+                    </div>
+                    <hr>
+                    <div class="bg-white d-flex justify-content-between text-muted small">
+                        <span class="text-start me-1">1 Jam yang lalu</span>
+                        <a href="{{route('singleloker')}}" class="text-decoration-none text-end ms-1 hover-text-primary">Selengkapnya &gt;</a>
+                    </div>
+
+                    <div class="position-absolute top-0 end-0 mt-2 me-2">
+                        <button class="btn btn-light"><i class="ri-bookmark-line"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 @endsection

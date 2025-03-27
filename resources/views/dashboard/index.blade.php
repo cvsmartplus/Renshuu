@@ -290,7 +290,7 @@
     <div class="mt-12">
         <div class="row gy-4">
             <div class="col-xxl-3 col-lg-4 col-sm-6">
-                <div class="card h-100 p-0 radius-12 overflow-hidden">
+                <div class="card h-90 p-0 radius-12 overflow-hidden">
                     <div class="card-body p-24">
                         <a href="{{ route('singlekursus') }}" class="w-100 max-h-194-px radius-8 overflow-hidden">
                             <img src="{{ asset('images/managers/Foto-aja.png') }}" alt=""
@@ -309,20 +309,17 @@
                                     404
                                 </i>
                             </div>
-                            <span class="d-block border-bottom border-neutral-300 border-dashed my-20"></span>
+                            <span class="d-flex border-bottom border-neutral-300 border-dashed my-20"></span>
                             <div class="d-flex justify-content-between align-items-center">
-                                <span class="fw-bold">Harga:Rp.10.000</span>
-                                <a href="{{ route('singlekursus') }}" class="fw-bold">
-                                    <span class=" text-hover-primary-600 transition-2">Selengkapnya</span>
-                                    <i class="ri-arrow-right-s-line"></i>
-                                </a>
+                                <span>Harga: <strong>Rp.10.000</strong></span>
+                                <a href="{{route('singlekursus')}}" class="text-decoration-none text-hover-primary-600">Selengkapnya &rsaquo;</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-xxl-3 col-lg-4 col-sm-6">
-                <div class="card h-100 p-0 radius-12 overflow-hidden">
+                <div class="card h-90 p-0 radius-12 overflow-hidden">
                     <div class="card-body p-24">
                         <a href="{{ route('singlekursus') }}" class="w-100 max-h-194-px radius-8 overflow-hidden">
                             <img src="{{ asset('images/managers/Foto.png') }}" alt=""
@@ -340,20 +337,17 @@
                                     5
                                 </i>
                             </div>
-                            <span class="d-block border-bottom border-neutral-300 border-dashed my-20"></span>
+                            <span class="d-flex border-bottom border-neutral-300 border-dashed my-20"></span>
                             <div class="d-flex justify-content-between align-items-center">
-                                <span class="fw-bold">Harga:Rp.10.000</span>
-                                <a href="{{ route('singlekursus') }}" class="fw-bold">
-                                    <span class=" text-hover-primary-600 transition-2">Selengkapnya</span>
-                                    <i class="ri-arrow-right-s-line"></i>
-                                </a>
+                                <span>Harga: <strong>Rp.10.000</strong></span>
+                                <a href="{{route('singlekursus')}}" class="text-decoration-none text-hover-primary-600">Selengkapnya &rsaquo;</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-xxl-3 col-lg-4 col-sm-6">
-                <div class="card h-100 p-0 radius-12 overflow-hidden">
+                <div class="card h-90 p-0 radius-12 overflow-hidden">
                     <div class="card-body p-24">
                         <a href="{{ route('singlekursus') }}" class="w-100 max-h-194-px radius-8 overflow-hidden">
                             <img src="{{ asset('images/managers/Tanam.png') }}" alt=""
@@ -364,27 +358,24 @@
                                 class="text-line-2 text-hover-primary-600 text-xl transition-2">Smart Farming</a>
                         </h6>
                         <div class="mt-20">
-                            <p class="text-line-3 text-neutral-500">Pertanian Cerdas: Inovasi Teknologi untuk Efisiensi dan
-                                Produktivitas.</p>
+                            <p class="text-line-3 text-neutral-500">Pertanian Cerdas:Inovasi Teknologi untuk Efisiensi.
+                            </p>
                             <div class="d-flex text-neutral-500 fw-medium">
                                 <i class="ri-user-line">
                                     5
                                 </i>
                             </div>
-                            <span class="d-block border-bottom border-neutral-300 border-dashed my-20"></span>
+                            <span class="d-flex border-bottom border-neutral-300 border-dashed my-20"></span>
                             <div class="d-flex justify-content-between align-items-center">
-                                <span class="fw-bold">Harga:Rp.10.000</span>
-                                <a href="{{ route('singlekursus') }}" class="fw-bold">
-                                    <span class=" text-hover-primary-600 transition-2">Selengkapnya</span>
-                                    <i class="ri-arrow-right-s-line"></i>
-                                </a>
+                                <span>Harga: <strong>Rp.10.000</strong></span>
+                                <a href="{{route('singlekursus')}}" class="text-decoration-none text-hover-primary-600">Selengkapnya &rsaquo;</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-xxl-3 col-lg-4 col-sm-6">
-                <div class="card h-100 p-0 radius-12 overflow-hidden">
+                <div class="card h-90 p-0 radius-12 overflow-hidden">
                     <div class="card-body p-24">
                         <a href="{{ route('singlekursus') }}" class="w-100 max-h-194-px radius-8 overflow-hidden">
                             <img src="{{ asset('images/managers/Teknologi.png') }}" alt=""
@@ -395,26 +386,23 @@
                                 class="text-line-2 text-hover-primary-600 text-xl transition-2">Smart City</a>
                         </h6>
                         <div class="mt-20">
-                            <p class="text-line-3 text-neutral-500"> "Kota Pintar: Solusi Teknologi untuk Perkotaan yang
-                                Lebih
-                                Baik.</p>
+                            <p class="text-line-3 text-neutral-500"> "Kota Pintar: Solusi Teknologi untuk Perkotaan yang Lebih Baik.
+                            </p>
                             <div class="d-flex text-neutral-500 fw-medium">
                                 <i class="ri-user-line">
-                                    5
+                                    404
                                 </i>
                             </div>
-                            <span class="d-block border-bottom border-neutral-300 border-dashed my-20"></span>
+                            <span class="d-flex border-bottom border-neutral-300 border-dashed my-20"></span>
                             <div class="d-flex justify-content-between align-items-center">
-                                <span class="fw-bold">Harga:Rp.10.000</span>
-                                <a href="{{ route('singlekursus') }}" class="fw-bold">
-                                    <span class=" text-hover-primary-600 transition-2">Selengkapnya</span>
-                                    <i class="ri-arrow-right-s-line"></i>
-                                </a>
+                                <span>Harga: <strong>Rp.10.000</strong></span>
+                                <a href="{{route('singlekursus')}}" class="text-decoration-none text-hover-primary-600">Selengkapnya &rsaquo;</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
         <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mt-24">
             <span>Showing 1 to 10 of 12 entries</span>

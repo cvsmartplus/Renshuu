@@ -66,4 +66,24 @@ class Admin_ManagerController extends Controller
     {
         return view('AdminManager/singleloker');
     }
+    
+    public function singlekelolapelamar()
+    {
+        return view('AdminManager/singlekelolapelamar');
+    }
+    
+    public function laporan()
+    {
+        return view('AdminManager/laporan');
+    }
+    
+    public function tambahperan()
+    {
+        return view('AdminManager/tambahperan');
+    }
+    
+    public function editperan()
+    {
+        return view('AdminManager/editperan');
+    }
 }

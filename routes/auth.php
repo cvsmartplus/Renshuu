@@ -124,6 +124,12 @@ Route::prefix('AdminManager')->group(function () {
         Route::get('/single','singleartikel')->name('singleartikel');
         Route::get('/singlekursus','singlekursus')->name('singlekursus');
         Route::get('/singleloker','singleloker')->name('singleloker');
+        Route::get('/singlekelolapelamar','singlekelolapelamar')->name('singlekelolapelamar');
+        Route::get('/laporan','laporan')->name('laporan');
+        Route::get('/tambahperan','tambahperan')->name('tambahperan');
+        Route::get('/editperan','editperan')->name('editperan');
+        
+
     });
 });
 
