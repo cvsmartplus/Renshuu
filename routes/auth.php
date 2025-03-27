@@ -30,6 +30,7 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\EmailVerificationPromptController;
 use App\Http\Controllers\Auth\EmailVerificationNotificationController;
 use App\Http\Controllers\single_kursusController;
+use App\Http\Controllers\CompanyAdminController;
 
 Route::middleware('guest')->group(function () {
     Route::get('register', [RegisteredUserController::class, 'create'])
@@ -126,6 +127,16 @@ Route::prefix('AdminManager')->group(function () {
         Route::get('/singleloker','singleloker')->name('singleloker');
     });
 });
+
+Route::prefix('company-admin')->group(function () {
+    Route::get('/', [CompanyAdminController::class, 'dashboard'])->name('companyadmin.dashboard'); // ini ke dashboard
+    Route::get('/dashboard', [CompanyAdminController::class, 'dashboard']); // opsional, boleh hapus nanti
+    Route::get('/pekerjaan', [CompanyAdminController::class, 'pekerjaan'])->name('companyadmin.pekerjaan');
+    Route::get('/pelamar', [CompanyAdminController::class, 'pelamar'])->name('companyadmin.pelamar');
+    Route::get('/pengaturan', [CompanyAdminController::class, 'pengaturan'])->name('companyadmin.pengaturan');
+    Route::get('/logout', [CompanyAdminController::class, 'logout'])->name('companyadmin.logout');
+});
+
 
 //single kursus
     // route::controller(single_kursusController::class)->group(function(){

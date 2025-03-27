@@ -19,7 +19,7 @@
         },
         stroke: {
             curve: 'smooth',
-            colors: ['#487FFF'],
+            colors: ['#5A9BFF'],
             width: 4
         },
         markers: {

@@ -422,6 +422,7 @@
                 </div>
             </div>
         </div>
+        
         <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mt-24">
             <span>Showing 1 to 10 of 12 entries</span>
             <ul class="pagination d-flex flex-wrap align-items-center gap-2 justify-content-center">

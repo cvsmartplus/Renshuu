@@ -6,6 +6,7 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\Http\\Controllers\\Admin_ManagerController' => $baseDir . '/app/Http/Controllers/Admin_ManagerController.php',
     'App\\Http\\Controllers\\AiapplicationController' => $baseDir . '/app/Http/Controllers/AiapplicationController.php',
     'App\\Http\\Controllers\\ArticleController' => $baseDir . '/app/Http/Controllers/ArticleController.php',
     'App\\Http\\Controllers\\Auth\\AuthenticatedSessionController' => $baseDir . '/app/Http/Controllers/Auth/AuthenticatedSessionController.php',
@@ -3331,7 +3332,6 @@ return array(
     'Override' => $vendorDir . '/symfony/polyfill-php83/Resources/stubs/Override.php',
     'PHPStan\\PhpDocParser\\Ast\\AbstractNodeVisitor' => $vendorDir . '/phpstan/phpdoc-parser/src/Ast/AbstractNodeVisitor.php',
     'PHPStan\\PhpDocParser\\Ast\\Attribute' => $vendorDir . '/phpstan/phpdoc-parser/src/Ast/Attribute.php',
-    'PHPStan\\PhpDocParser\\Ast\\Comment' => $vendorDir . '/phpstan/phpdoc-parser/src/Ast/Comment.php',
     'PHPStan\\PhpDocParser\\Ast\\ConstExpr\\ConstExprArrayItemNode' => $vendorDir . '/phpstan/phpdoc-parser/src/Ast/ConstExpr/ConstExprArrayItemNode.php',
     'PHPStan\\PhpDocParser\\Ast\\ConstExpr\\ConstExprArrayNode' => $vendorDir . '/phpstan/phpdoc-parser/src/Ast/ConstExpr/ConstExprArrayNode.php',
     'PHPStan\\PhpDocParser\\Ast\\ConstExpr\\ConstExprFalseNode' => $vendorDir . '/phpstan/phpdoc-parser/src/Ast/ConstExpr/ConstExprFalseNode.php',

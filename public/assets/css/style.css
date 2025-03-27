@@ -3210,7 +3210,7 @@ th {
 }
 
 .bg-gradient-start-1 {
-  background: linear-gradient(to right, #E6F9FF, #FEFFFF);
+  background: linear-gradient(to right, #dcf0f5, #FEFFFF);
 }
 
 .bg-gradient-start-2 {
@@ -3222,11 +3222,19 @@ th {
 }
 
 .bg-gradient-start-4 {
-  background: linear-gradient(to right, #E8FFF5, #FFFFFF);
+ background: linear-gradient(to right, #ddf4de, #FFFFFF);
 }
 
 .bg-gradient-start-5 {
   background: linear-gradient(to right, #FFEEEE, #FFFCFC);
+}
+
+.bg-gradient-start-6 {
+  background: linear-gradient(to right, #ddf7e2, #FFFCFC);
+}
+
+.bg-gradient-start-7 {
+  background: linear-gradient(to right, #f7e8e8, #FFFCFC);
 }
 
 .bg-gradient-dark-start-1 {
@@ -15074,7 +15082,10 @@ td.fc-header-center {
 }
 .dashboard-main-body {
   padding: 0.9375rem;
+  background-color: #E9F4FF !important; /* Warna sesuai desain */
+  min-height: 100vh; /* Biar tetap menutupi seluruh halaman */
 }
+
 
 @media (min-width: 1400px) {
   .dashboard-main-body {
@@ -15095,3 +15106,26 @@ td.fc-header-center {
 }
 
 /* === footer css end === */
+
+.menu-list {
+  list-style: none;
+  padding: 0;
+}
+
+.menu-list li {
+  margin-bottom: 15px; /* Jarak antar item */
+}
+
+.menu-list li:last-child {
+  margin-top: 40px; /* Memberi jarak ekstra untuk "Keluar Akun" */
+}
+
+.logout-item {
+  margin-top: 20px; /* Sesuaikan jarak sesuai Figma */
+}
+
+.chart-container {
+  min-height: 250px; /* Pastikan chart memiliki tinggi minimum */
+  width: 100%; /* Biar tetap responsif */
+}
+
