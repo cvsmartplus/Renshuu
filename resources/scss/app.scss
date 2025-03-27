@@ -292,3 +292,8 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: space-between;
   min-height: 250px; /* Bisa disesuaikan sesuai kebutuhan */
 }
+
+
+.bg-primary {
+    background-color: $ctabtn !important;
+}

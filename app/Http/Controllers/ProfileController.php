@@ -13,15 +13,20 @@ use Inertia\Response;
 
 class ProfileController extends Controller
 {
-    /**
-     * Display the user's profile form.
-     */
-    public function edit(Request $request): Response
+
+    public function index(Request $request): Response
     {
-        return Inertia::render('Profile/Edit', [
+        return Inertia::render('Profile/UserProfile', [
             'mustVerifyEmail' => $request->user() instanceof MustVerifyEmail,
             'status' => session('status'),
         ]);
+    }
+    /**
+     * Display the user's profile form.
+     */
+    public function edit()
+    {
+        return Inertia::render('Profile/UserEdit');
     }
 
     /**
@@ -59,5 +64,15 @@ class ProfileController extends Controller
         $request->session()->regenerateToken();
 
         return Redirect::to('/');
+    }
+
+    public function documents()
+    {
+        return Inertia::render('Profile/UserDocuments');
+    }
+
+    public function transactions()
+    {
+        return Inertia::render('Profile/UserTransactions');
     }
 }

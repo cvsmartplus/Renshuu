@@ -28,7 +28,10 @@ Route::resource('article', ArticleController::class)->except(['show']);
 Route::get('/article/{artikel:slug}', [ArticleController::class, 'show'])->name('article.show');
 
 Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
+    Route::get('/profile/document', [ProfileController::class, 'documents'])->name('profile.documents');
+    Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::get('/profile/transactions', [ProfileController::class, 'transactions'])->name('profile.transactions');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
