@@ -13,7 +13,7 @@
     <main class="">
 
         <!-- ..::  navbar start ::.. -->
-        <x-navbar />
+        <x-navbarSingle />
         <!-- ..::  navbar end ::.. -->
         
             

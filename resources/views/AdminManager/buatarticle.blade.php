@@ -3,20 +3,9 @@
 @php
     $title = 'Buat_Artikel';
     $script = '<script src="' . asset('assets/js/editor.highlighted.min.js') . '"></script>
-                   <script src="' . asset('assets/js/editor.quill.js') . '"></script>
-                   <script src="' . asset('assets/js/editor.katex.min.js') . '"></script>
-                   <script>
-                       // Editor Js Start
-                       const quill = new Quill("#editor", {
-                           modules: {
-                               syntax: true,
-                               toolbar: "#toolbar-container",
-                           },
-                           placeholder: "Compose an epic...",
-                           theme: "snow",
-                       });
-                       // Editor Js End
-                   </script>';
+                <script src="' . asset('assets/js/editor.quill.js') . '"></script>
+                <script src="' . asset('assets/js/editor.katex.min.js') . '"></script>
+                <script src="' . asset('assets/js/editor.js') . '"></script>';
 @endphp
 
 @section('content')

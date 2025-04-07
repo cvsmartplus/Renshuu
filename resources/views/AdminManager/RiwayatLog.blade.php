@@ -5,6 +5,7 @@
     $subTitle = 'Menu Utama';
     $script = '<script src="' . asset('assets/js/homeOneChart.js') . '"></script>
     <script src="' . asset('assets/js/lineChartPageChart.js') . '"></script>
+    <script src="' . asset('assets/js/handleredirect.js') . '"></script>
     <script src="' . asset('assets/js/columnChartPageChart.js') . '"></script>';
 @endphp
 
@@ -24,10 +25,10 @@
                         <span class="input-group-text">🔍</span>
                         <input type="text" class="form-control" placeholder="Cari">
                     </div>
-                    <select class="form-select form-select-sm" style="width: 100px;">
-                        <option value="Status">Status</option>
-                        <option value="Tidak Lolos">Tidak Lolos</option>
-                        <option value="Lolos tahap selanjutnya">Lolos tahap selanjutnya</option>
+                    <select class="form-select form-select-sm" style="width: 100px;" onchange="handleRedirect(this)">
+                        <option value="status">Status</option>
+                        <option value="/status/Tidak Lolos">Tidak Lolos</option>
+                        <option value="/status/Lolos tahap selanjutnya">Lolos tahap selanjutnya</option>
                     </select>
                 </div>
             </div>
@@ -59,14 +60,29 @@
                             <tr>
                                 <th scope="col">ID</th>
                                 <th scope="col">Tindakan</th>
-                                <th scope="col">Waktu</th>
+                                <th scope="col">
+                                    <div class="dropdown">
+                                        <div class="btn-light dropdown-toggle text-start" id="dropdownRole" data-bs-toggle="dropdown" aria-expanded="false">
+                                          Waktu
+                                        </div>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownRole">
+                                          <li><a class="dropdown-item" href="#">Admin</a></li>
+                                          <li><a class="dropdown-item" href="#">Editor</a></li>
+                                          <li><a class="dropdown-item" href="#">User</a></li>
+                                        </ul>
+                                    </div>
+                                </th>
                                 <th class="text-center">
-                                    <button class="btn text-dark p-0 d-flex align-items-center gap-1 sort-btn"
-                                        data-column="role" data-order="asc">
-                                        <i class="ri-arrow-up-s-fill"></i>
-                                        <i class="ri-arrow-down-s-fill d-block"></i>
-                                        <span>Role</span>
-                                    </button>
+                                    <div class="dropdown">
+                                        <div class="btn-light dropdown-toggle text-start" id="dropdownRole" data-bs-toggle="dropdown" aria-expanded="false">
+                                          Role
+                                        </div>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownRole">
+                                          <li><a class="dropdown-item" href="#">Admin</a></li>
+                                          <li><a class="dropdown-item" href="#">Editor</a></li>
+                                          <li><a class="dropdown-item" href="#">User</a></li>
+                                        </ul>
+                                    </div>
                                 </th>
                             </tr>
                         </thead>

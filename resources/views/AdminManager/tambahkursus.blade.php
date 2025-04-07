@@ -6,114 +6,11 @@
     $script = '<script src="' . asset('assets/js/homeOneChart.js') . '"></script>
     <script src="' . asset('assets/js/lineChartPageChart.js') . '"></script>
     <script src="' . asset('assets/js/columnChartPageChart.js') . '"></script>
-    <script>
-        // =============================== Wizard Step Js Start ================================
-        $(document).ready(function() {
-            // click on next button
-            $(".form-wizard-next-btn").on("click", function() {
-                var parentFieldset = $(this).parents(".wizard-fieldset");
-                var currentActiveStep = $(this).parents(".form-wizard").find(".form-wizard-list .active");
-                var next = $(this);
-                var nextWizardStep = true;
-                parentFieldset.find(".wizard-required").each(function() {
-                    var thisValue = $(this).val();
-
-                    if (thisValue == "") {
-                        $(this).siblings(".wizard-form-error").show();
-                        nextWizardStep = false;
-                    } else {
-                        $(this).siblings(".wizard-form-error").hide();
-                    }
-                });
-                if (nextWizardStep) {
-                    next.parents(".wizard-fieldset").removeClass("show", "400");
-                    currentActiveStep.removeClass("active").addClass("activated").next().addClass("active",
-                        "400");
-                    next.parents(".wizard-fieldset").next(".wizard-fieldset").addClass("show", "400");
-                    $(document).find(".wizard-fieldset").each(function() {
-                        if ($(this).hasClass("show")) {
-                            var formAtrr = $(this).attr("data-tab-content");
-                            $(document).find(".form-wizard-list .form-wizard-step-item").each(
-                                function() {
-                                    if ($(this).attr("data-attr") == formAtrr) {
-                                        $(this).addClass("active");
-                                        var innerWidth = $(this).innerWidth();
-                                        var position = $(this).position();
-                                        $(document).find(".form-wizard-step-move").css({
-                                            "left": position.left,
-                                            "width": innerWidth
-                                        });
-                                    } else {
-                                        $(this).removeClass("active");
-                                    }
-                                });
-                        }
-                    });
-                }
-            });
-            //click on previous button
-            $(".form-wizard-previous-btn").on("click", function() {
-                var counter = parseInt($(".wizard-counter").text());;
-                var prev = $(this);
-                var currentActiveStep = $(this).parents(".form-wizard").find(".form-wizard-list .active");
-                prev.parents(".wizard-fieldset").removeClass("show", "400");
-                prev.parents(".wizard-fieldset").prev(".wizard-fieldset").addClass("show", "400");
-                currentActiveStep.removeClass("active").prev().removeClass("activated").addClass("active",
-                    "400");
-                $(document).find(".wizard-fieldset").each(function() {
-                    if ($(this).hasClass("show")) {
-                        var formAtrr = $(this).attr("data-tab-content");
-                        $(document).find(".form-wizard-list .form-wizard-step-item").each(
-                    function() {
-                            if ($(this).attr("data-attr") == formAtrr) {
-                                $(this).addClass("active");
-                                var innerWidth = $(this).innerWidth();
-                                var position = $(this).position();
-                                $(document).find(".form-wizard-step-move").css({
-                                    "left": position.left,
-                                    "width": innerWidth
-                                });
-                            } else {
-                                $(this).removeClass("active");
-                            }
-                        });
-                    }
-                });
-            });
-            //click on form submit button
-            $(document).on("click", ".form-wizard .form-wizard-submit", function() {
-                var parentFieldset = $(this).parents(".wizard-fieldset");
-                var currentActiveStep = $(this).parents(".form-wizard").find(".form-wizard-list .active");
-                parentFieldset.find(".wizard-required").each(function() {
-                    var thisValue = $(this).val();
-                    if (thisValue == "") {
-                        $(this).siblings(".wizard-form-error").show();
-                    } else {
-                        $(this).siblings(".wizard-form-error").hide();
-                    }
-                });
-            });
-            // focus on input field check empty or not
-            $(".form-control").on("focus", function() {
-                var tmpThis = $(this).val();
-                if (tmpThis == "") {
-                    $(this).parent().addClass("focus-input");
-                } else if (tmpThis != "") {
-                    $(this).parent().addClass("focus-input");
-                }
-            }).on("blur", function() {
-                var tmpThis = $(this).val();
-                if (tmpThis == "") {
-                    $(this).parent().removeClass("focus-input");
-                    $(this).siblings(".wizard-form-error").show();
-                } else if (tmpThis != "") {
-                    $(this).parent().addClass("focus-input");
-                    $(this).siblings(".wizard-form-error").hide();
-                }
-            });
-        });
-        // =============================== Wizard Step Js End ================================
-    </script>';
+    <script src="' . asset('assets/js/editor.highlighted.min.js') . '"></script>
+    <script src="' . asset('assets/js/editor.quill.js') . '"></script>
+    <script src="' . asset('assets/js/editor.katex.min.js') . '"></script>
+    <script src="' . asset('assets/js/editor.js') . '"></script>;
+    <script src="' . asset('assets/js/wizard.js') . '"></script>';
 @endphp
 
 @section('content')
@@ -169,127 +66,296 @@
                                             <div class="wizard-form-error"></div>
                                         </div>
                                     </div>
+                                    <div class="mb-3">
+                                        <label class="form-label fw-bold">Tingkat Kesulitan</label>
+                                        <p class="text-muted">Pilih Tingkat Kesulitan Kursus Ini Menurut Anda</p>
+                                        <select class="form-select" style="width: 300px;">
+                                            <option>Mudah</option>
+                                            <option>Sedang</option>
+                                            <option>Sulit</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="row">
+                                        <!-- Ketentuan Tanggal -->
+                                        <div class="col-md-6 col-lg-3">
+                                            <label class="form-label fw-bold">Ketentuan Tanggal</label>
+                                            <div class="text-muted text-sm">Dari</div>
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="fas fa-calendar"></i></span>
+                                                <input type="date" class="form-control">
+                                            </div>
+
+                                        </div>
+                                        <div class="col-md-6 col-lg-3 align-self-end">
+                                            <div class="text-muted text-sm">Sampai Dengan</div>
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="fas fa-calendar"></i></span>
+                                                <input type="date" class="form-control">
+                                            </div>
+
+                                        </div>
+
+                                        <!-- Durasi Waktu -->
+                                        <div class="col-md-6 col-lg-3">
+                                            <label class="form-label fw-bold">Durasi Waktu</label>
+                                            <div class="text-muted text-sm">Durasi Waktu Kursus</div>
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="fas fa-calendar"></i></span>
+                                                <input type="date" class="form-control">
+                                            </div>
+
+                                        </div>
+
+                                        <!-- Ketentuan Harga -->
+                                        <div class="col-md-6 col-lg-3">
+                                            <label class="form-label fw-bold">Ketentuan Harga</label>
+                                            <div class="text-muted text-sm">Masukan jumlah harga kursus</div>
+                                            <div class="input-group">
+                                                <span class="input-group-text">Rp</span>
+                                                <input type="text" class="form-control" placeholder="???">
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <label class="mt-3">Deskripsi Artikel</label>
+                                    <!-- Editor Toolbar Start -->
+                                    <div id="toolbar-container">
+                                        <span class="ql-formats">
+                                            <select class="ql-font"></select>
+                                            <select class="ql-size"></select>
+                                        </span>
+                                        <span class="ql-formats">
+                                            <button class="ql-bold"></button>
+                                            <button class="ql-italic"></button>
+                                            <button class="ql-underline"></button>
+                                            <button class="ql-strike"></button>
+                                        </span>
+                                        <span class="ql-formats">
+                                            <select class="ql-color"></select>
+                                            <select class="ql-background"></select>
+                                        </span>
+                                        <span class="ql-formats">
+                                            <button class="ql-script" value="sub"></button>
+                                            <button class="ql-script" value="super"></button>
+                                        </span>
+                                        <span class="ql-formats">
+                                            <button class="ql-header" value="1"></button>
+                                            <button class="ql-header" value="2"></button>
+                                            <button class="ql-blockquote"></button>
+                                            <button class="ql-code-block"></button>
+                                        </span>
+                                        <span class="ql-formats">
+                                            <button class="ql-list" value="ordered"></button>
+                                            <button class="ql-list" value="bullet"></button>
+                                            <button class="ql-indent" value="-1"></button>
+                                            <button class="ql-indent" value="+1"></button>
+                                        </span>
+                                        <span class="ql-formats">
+                                            <button class="ql-direction" value="rtl"></button>
+                                            <select class="ql-align"></select>
+                                        </span>
+                                        <span class="ql-formats">
+                                            <button class="ql-link"></button>
+                                            <button class="ql-image"></button>
+                                            <button class="ql-video"></button>
+                                            <button class="ql-formula"></button>
+                                        </span>
+                                        <span class="ql-formats">
+                                            <button class="ql-clean"></button>
+                                        </span>
+                                    </div>
+                                    <!-- Editor Toolbar End -->
+
+                                    <!-- Editor start -->
+                                    <div id="editor">
+
+                                    </div>
+                                    <!-- Edit End -->
+
+                                    <div class="col-12 mt-5">
+                                        <h6 class="text-lg fw-semibold mb-0">Tambah Foto Thumbnail</h6>
+
+                                        <div class="upload-image-wrapper d-flex align-items-center gap-3 w-100 mt-3">
+                                            <!-- Preview Image Container -->
+                                            <div
+                                                class="uploaded-img d-none position-relative h-120-px w-100 border input-form-light radius-8 overflow-hidden border-dashed bg-neutral-50">
+                                                <button type="button"
+                                                    class="uploaded-img__remove position-absolute top-0 end-0 z-1 text-2xxl line-height-1 me-2 mt-2 d-flex">
+                                                    <iconify-icon icon="radix-icons:cross-2"
+                                                        class="text-xl text-danger-600"></iconify-icon>
+                                                </button>
+                                                <img id="uploaded-img__preview" class="w-100 h-100 object-fit-cover"
+                                                    src="{{ asset('assets/images/user.png') }}" alt="image">
+                                            </div>
+
+                                            <!-- Upload Button -->
+                                            <label
+                                                class="upload-file h-120-px w-100 border input-form-light radius-8 overflow-hidden border-dashed bg-neutral-50 bg-hover-neutral-200 d-flex align-items-center flex-column justify-content-center gap-1 cursor-pointer"
+                                                for="upload-file">
+                                                <iconify-icon icon="solar:camera-outline"
+                                                    class="text-xl text-secondary-light"></iconify-icon>
+                                                <span class="fw-semibold text-secondary-light">Upload</span>
+                                                <input id="upload-file" type="file" hidden>
+                                            </label>
+                                        </div>
+                                    </div>
                                     <div class="form-group text-end">
-                                        <button type="button"
-                                            class="form-wizard-next-btn btn btn-primary-600 px-32">Next</button>
+                                        <button
+                                            class="w-100 text-white rounded-2 text-center mt-5 form-wizard-next-btn btn btn-primary-600 px-32"
+                                            style="background-color: #002776; border: none;">Selanjutnya</button>
+
                                     </div>
                                 </div>
                             </fieldset>
 
                             <fieldset class="wizard-fieldset">
-                                <h6 class="text-md text-neutral-500">Payment Information</h6>
                                 <div class="row gy-3">
+                                    <!-- Nama Pemateri -->
                                     <div class="col-sm-12">
-                                        <label class="form-label">Holder Name*</label>
+                                        <label class="form-label">Nama Lengkap Pemateri</label>
                                         <div class="position-relative">
                                             <input type="text" class="form-control wizard-required"
-                                                placeholder="Enter Holder Name" required>
+                                                placeholder="Tuliskan Nama Lengkap Pemateri" required>
                                             <div class="wizard-form-error"></div>
                                         </div>
                                     </div>
-                                    <div class="col-sm-6">
-                                        <label class="form-label">Card Number*</label>
+                                
+                                    <!-- Judul kursus -->
+                                    <div class="col-sm-12">
+                                        <label class="form-label">Judul Dari Pemateri</label>
                                         <div class="position-relative">
-                                            <input type="number" class="form-control wizard-required"
-                                                placeholder="Enter Card Number" required>
+                                            <input type="text" class="form-control wizard-required"
+                                                placeholder="Contoh : Transformasi Digital dengan Elon Musk: Inovasi dan Teknologi Terkini" required>
                                             <div class="wizard-form-error"></div>
                                         </div>
                                     </div>
-                                    <div class="col-sm-6">
-                                        <label class="form-label">CVC Number*</label>
+                                
+                                    <!-- Kategori kursus -->
+                                    <div class="col-sm-12">
+                                        <label class="form-label">Kategori Kursus</label>
                                         <div class="position-relative">
-                                            <input type="number" class="form-control wizard-required"
-                                                placeholder="CVC Number" required>
+                                            <input type="text" class="form-control wizard-required"
+                                                placeholder="Tuliskan Kategori Kursus" required>
                                             <div class="wizard-form-error"></div>
                                         </div>
                                     </div>
-                                    <div class="col-12">
-                                        <label class="form-label">Expiry Date*</label>
-                                        <div class="row gy-4">
-                                            <div class="col-sm-4">
-                                                <div class="position-relative">
-                                                    <select class="form-control form-select">
-                                                        <option value="">Date</option>
-                                                        <option value="">1</option>
-                                                        <option value="">2</option>
-                                                        <option value="">3</option>
-                                                        <option value="">4</option>
-                                                        <option value="">5</option>
-                                                        <option value="">6</option>
-                                                        <option value="">7</option>
-                                                        <option value="">8</option>
-                                                        <option value="">9</option>
-                                                        <option value="">10</option>
-                                                        <option value="">11</option>
-                                                        <option value="">12</option>
-                                                        <option value="">13</option>
-                                                        <option value="">14</option>
-                                                        <option value="">15</option>
-                                                        <option value="">16</option>
-                                                        <option value="">17</option>
-                                                        <option value="">18</option>
-                                                        <option value="">19</option>
-                                                        <option value="">20</option>
-                                                        <option value="">21</option>
-                                                        <option value="">22</option>
-                                                        <option value="">23</option>
-                                                        <option value="">24</option>
-                                                        <option value="">25</option>
-                                                        <option value="">26</option>
-                                                        <option value="">27</option>
-                                                        <option value="">28</option>
-                                                        <option value="">29</option>
-                                                        <option value="">30</option>
-                                                        <option value="">31</option>
-                                                    </select>
-                                                </div>
+                                
+                                    <!-- Sosial Media -->
+                                    <div class="mb-2">
+                                        <label class="form-label fw-semibold">Tambahkan Sosial Media Pemateri</label>
+                                        <div class="form-text mb-2">Boleh diisi maupun tidak, masukan link jika ingin
+                                            menambahkan.</div>
+
+                                        <div class="row g-3">
+                                            <div class="col-md-6">
+                                                <input type="text" class="form-control" placeholder="Instagram">
                                             </div>
-                                            <div class="col-sm-4">
-                                                <div class="position-relative">
-                                                    <select class="form-control form-select">
-                                                        <option value="">Month</option>
-                                                        <option value="">jan</option>
-                                                        <option value="">Feb</option>
-                                                        <option value="">March</option>
-                                                        <option value="">April</option>
-                                                        <option value="">May</option>
-                                                        <option value="">June</option>
-                                                        <option value="">Jully</option>
-                                                        <option value="">August</option>
-                                                        <option value="">Sept</option>
-                                                        <option value="">Oct</option>
-                                                        <option value="">Nov</option>
-                                                        <option value="">Dec</option>
-                                                    </select>
-                                                </div>
+                                            <div class="col-md-6">
+                                                <input type="text" class="form-control" placeholder="Tiktok">
                                             </div>
-                                            <div class="col-sm-4">
-                                                <div class="position-relative">
-                                                    <select class="form-control form-select">
-                                                        <option value="">Years</option>
-                                                        <option value="">2019</option>
-                                                        <option value="">2020</option>
-                                                        <option value="">2021</option>
-                                                        <option value="">2022</option>
-                                                        <option value="">2023</option>
-                                                        <option value="">2024</option>
-                                                        <option value="">2025</option>
-                                                        <option value="">2026</option>
-                                                        <option value="">2027</option>
-                                                        <option value="">2028</option>
-                                                        <option value="">2029</option>
-                                                        <option value="">2030</option>
-                                                    </select>
-                                                </div>
+                                            <div class="col-md-6">
+                                                <input type="text" class="form-control" placeholder="Facebook">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="text" class="form-control" placeholder="LinkedIn">
                                             </div>
                                         </div>
                                     </div>
 
+                                    <label class="mt-3">Deskripsi Artikel</label>
+                                    <!-- Editor Toolbar Start -->
+                                    <div id="toolbar1-container">
+                                        <span class="ql-formats">
+                                            <select class="ql-font"></select>
+                                            <select class="ql-size"></select>
+                                        </span>
+                                        <span class="ql-formats">
+                                            <button class="ql-bold"></button>
+                                            <button class="ql-italic"></button>
+                                            <button class="ql-underline"></button>
+                                            <button class="ql-strike"></button>
+                                        </span>
+                                        <span class="ql-formats">
+                                            <select class="ql-color"></select>
+                                            <select class="ql-background"></select>
+                                        </span>
+                                        <span class="ql-formats">
+                                            <button class="ql-script" value="sub"></button>
+                                            <button class="ql-script" value="super"></button>
+                                        </span>
+                                        <span class="ql-formats">
+                                            <button class="ql-header" value="1"></button>
+                                            <button class="ql-header" value="2"></button>
+                                            <button class="ql-blockquote"></button>
+                                            <button class="ql-code-block"></button>
+                                        </span>
+                                        <span class="ql-formats">
+                                            <button class="ql-list" value="ordered"></button>
+                                            <button class="ql-list" value="bullet"></button>
+                                            <button class="ql-indent" value="-1"></button>
+                                            <button class="ql-indent" value="+1"></button>
+                                        </span>
+                                        <span class="ql-formats">
+                                            <button class="ql-direction" value="rtl"></button>
+                                            <select class="ql-align"></select>
+                                        </span>
+                                        <span class="ql-formats">
+                                            <button class="ql-link"></button>
+                                            <button class="ql-image"></button>
+                                            <button class="ql-video"></button>
+                                            <button class="ql-formula"></button>
+                                        </span>
+                                        <span class="ql-formats">
+                                            <button class="ql-clean"></button>
+                                        </span>
+                                    </div>
+                                    <!-- Editor Toolbar Start -->
+
+                                    <!-- Editor start -->
+                                    <div id="editor1">
+
+                                    </div>
+                                    <!-- Edit End -->
+
+                                    <div class="col-12 mt-5">
+                                        <h6 class="text-lg fw-semibold mb-0">Tambah Foto Thumbnail</h6>
+
+                                        <div class="upload-image-wrapper d-flex align-items-center gap-3 w-100 mt-3">
+                                            <!-- Preview Image Container -->
+                                            <div
+                                                class="uploaded-img d-none position-relative h-120-px w-100 border input-form-light radius-8 overflow-hidden border-dashed bg-neutral-50">
+                                                <button type="button"
+                                                    class="uploaded-img__remove position-absolute top-0 end-0 z-1 text-2xxl line-height-1 me-2 mt-2 d-flex">
+                                                    <iconify-icon icon="radix-icons:cross-2"
+                                                        class="text-xl text-danger-600"></iconify-icon>
+                                                </button>
+                                                <img id="uploaded-img__preview" class="w-100 h-100 object-fit-cover"
+                                                    src="{{ asset('assets/images/user.png') }}" alt="image">
+                                            </div>
+
+                                            <!-- Upload Button -->
+                                            <label
+                                                class="upload-file h-120-px w-100 border input-form-light radius-8 overflow-hidden border-dashed bg-neutral-50 bg-hover-neutral-200 d-flex align-items-center flex-column justify-content-center gap-1 cursor-pointer"
+                                                for="upload-file">
+                                                <iconify-icon icon="solar:camera-outline"
+                                                    class="text-xl text-secondary-light"></iconify-icon>
+                                                <span class="fw-semibold text-secondary-light">Upload</span>
+                                                <input id="upload-file" type="file" hidden>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group text-end">
+                                        <button
+                                            class="w-100 text-white rounded-2 text-center mt-5 form-wizard-next-btn btn btn-primary-600 px-32"
+                                            style="background-color: #002776; border: none;">Selanjutnya</button>
+
+                                    </div>
+
                                     <div class="form-group d-flex align-items-center justify-content-end gap-8">
                                         <button type="button"
-                                            class="form-wizard-previous-btn btn btn-neutral-500 border-neutral-100 px-32">Back</button>
-                                        <button type="button"
-                                            class="form-wizard-next-btn btn btn-primary-600 px-32">Next</button>
+                                            class="form-wizard-previous-btn btn btn-neutral-500 border-neutral-100 px-32" style="background-color: #002776; border: none;">Kembali</button>
                                     </div>
                                 </div>
                             </fieldset>
@@ -312,60 +378,6 @@
                         </form>
                     </div>
                     <!-- Form Wizard End -->
-
-                    <div class="mb-3">
-                        <label class="form-label fw-bold">Tingkat Kesulitan</label>
-                        <p class="text-muted">Pilih Tingkat Kesulitan Kursus Ini Menurut Anda</p>
-                        <select class="form-select" style="width: 300px;">
-                            <option>Mudah</option>
-                            <option>Sedang</option>
-                            <option>Sulit</option>
-                        </select>
-                    </div>
-                    
-                    <div class="row">
-                        <!-- Ketentuan Tanggal -->
-                        <div class="col-md-6 col-lg-3">
-                            <label class="form-label fw-bold">Ketentuan Tanggal</label>
-                            <div class="text-muted text-sm">Dari</div>
-                            <div class="input-group">
-                                <span class="input-group-text"><i class="fas fa-calendar"></i></span>
-                                <input type="date" class="form-control">
-                            </div>
-                            
-                        </div>
-                        <div class="col-md-6 col-lg-3 align-self-end">
-                            <small class="text-muted">Sampai Dengan</small>
-                            <div class="input-group">
-                                <span class="input-group-text"><i class="fas fa-calendar"></i></span>
-                                <input type="date" class="form-control">
-                            </div>
-                            
-                        </div>
-                    
-                        <!-- Durasi Waktu -->
-                        <div class="col-md-6 col-lg-3">
-                            <label class="form-label fw-bold">Durasi Waktu</label>
-                            <span class="text-muted text-sm">Durasi Waktu Kursus</span>
-                            <div class="input-group">
-                                <span class="input-group-text"><i class="fas fa-calendar"></i></span>
-                                <input type="date" class="form-control">
-                            </div>
-                            
-                        </div>
-                    
-                        <!-- Ketentuan Harga -->
-                        <div class="col-md-6 col-lg-3">
-                            <label class="form-label fw-bold">Ketentuan Harga</label>
-                            <span class="text-muted text-sm">Masukan jumlah harga kursus</span>
-                            <div class="input-group">
-                                <span class="input-group-text">Rp</span>
-                                <input type="text" class="form-control" placeholder="???">
-                            </div>
-                            
-                        </div>
-                    </div>
-                    
                 </div>
             </div>
         </div>
