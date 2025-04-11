@@ -3,11 +3,11 @@
 @section('content')
     <div class="card-header d-flex flex-wrap align-items-center justify-content-between gap-3 mb-20">
         <div class="d-flex flex-wrap align-items-center gap-3">
-            <a href="{{ route('invoiceAdd') }}" class="btn btn-sm btn-primary-600"><i class="ri-add-line"></i> Tambah
+            <a href="{{ route('invoiceAdd') }}" class="btn btn-sm btn-primary-600"><i class="ri-add-line" style="background-color: blue;"></i> Tambah
                 Artikel</a>
         </div>
         <div class="d-flex flex-nowrap align-items-center gap-3">
-            <a href="{{ route('invoiceAdd') }}" class="btn btn-sm btn-danger-600"><i class="ri-delete-bin-line"></i> Hapus
+            <a href="{{ route('invoiceAdd') }}" class="btn btn-sm btn-danger-600"><i class="ri-delete-bin-line" style="background-color: #D90000;"></i> Hapus
                 Artikel</a>
         </div>
     </div>
