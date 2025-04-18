@@ -3229,6 +3229,18 @@ th {
   background: linear-gradient(to right, #FFEEEE, #FFFCFC);
 }
 
+.bg-gradient-start-6 {
+  background: linear-gradient(to right, #e7f1e7, #ffffff);
+}
+
+.bg-gradient-start-7 {
+  background: linear-gradient(to right, #f3e5e5, #ffffff);
+}
+
+.bg-gradient-start-8 {
+  background: linear-gradient(to right, #dbf1f8, #ffffff);
+}
+
 .bg-gradient-dark-start-1 {
   background: linear-gradient(261deg, rgba(255, 234, 244, 0.5) 2.07%, #FFE2F0 97.73%);
 }
@@ -15095,3 +15107,8 @@ td.fc-header-center {
 }
 
 /* === footer css end === */
+
+.custom-bg {
+  background-color: #E9F4FF; /* biru muda seperti figma */
+}
+
