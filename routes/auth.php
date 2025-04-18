@@ -1,17 +1,7 @@
 <?php
 
-use App\Http\Controllers\AiapplicationController;
-use App\Http\Controllers\Auth\AuthenticatedSessionController;
-use App\Http\Controllers\Auth\ConfirmablePasswordController;
-use App\Http\Controllers\Auth\EmailVerificationNotificationController;
-use App\Http\Controllers\Auth\EmailVerificationPromptController;
-use App\Http\Controllers\Auth\NewPasswordController;
-use App\Http\Controllers\Auth\PasswordController;
-use App\Http\Controllers\Auth\PasswordResetLinkController;
-use App\Http\Controllers\Auth\RegisteredUserController;
-use App\Http\Controllers\Auth\VerifyEmailController;
-use App\Http\Controllers\Auth\OTPVerificationController;
-use App\Http\Controllers\AuthenticationController;
+use App\Http\Controllers\Admin_ManagerController;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ChartController;
 use App\Http\Controllers\ComponentpageController;
@@ -20,13 +10,27 @@ use App\Http\Controllers\CryptoCurrencyController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FormsController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\JobsController;
 use App\Http\Controllers\RoleandaccessController;
-use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\TableController;
 use App\Http\Controllers\UsersController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\InvoiceController;
+use App\Http\Controllers\SettingsController;
+use App\Http\Controllers\AiapplicationController;
+use App\Http\Controllers\Auth\PasswordController;
+use App\Http\Controllers\AuthenticationController;
+use App\Http\Controllers\Auth\NewPasswordController;
+use App\Http\Controllers\Auth\VerifyEmailController;
+use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\Auth\OTPVerificationController;
+use App\Http\Controllers\Auth\PasswordResetLinkController;
+use App\Http\Controllers\Auth\ConfirmablePasswordController;
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\Auth\EmailVerificationPromptController;
+use App\Http\Controllers\Auth\EmailVerificationNotificationController;
+use App\Http\Controllers\single_kursusController;
+use App\Http\Controllers\CompanyAdminController;
 
 Route::middleware('guest')->group(function () {
     Route::get('register', [RegisteredUserController::class, 'create'])
@@ -106,6 +110,46 @@ Route::prefix('dashboard')->group(function () {
     });
 });
 
+//Admin Manager
+Route::prefix('AdminManager')->group(function () {
+    Route::controller(Admin_ManagerController::class)->group(function () {
+        Route::get('/article', 'articleadmin')->name('articleadmin');
+        Route::get('/buatarticle', 'buatarticle')->name('buatarticle');
+        Route::get('/KelolaAkunAdmin', 'KelolaAkunAdmin')->name('KelolaAkunAdmin');
+        Route::get('/kelolapelamar', 'kelolapelamar')->name('kelolapelamar');
+        Route::get('/adminkursus','adminkursus')->name('adminkursus');
+        Route::get('/pekerjaan','pekerjaan')->name('pekerjaan');
+        Route::get('/RiwayatLog','RiwayatLog')->name('RiwayatLog');
+        Route::get('/tambahkursus','tambahkursus')->name('tambahkursus');
+        Route::get('/tambahloker','tambahloker')->name('tambahloker');
+        Route::get('/single','singleartikel')->name('singleartikel');
+        Route::get('/singlekursus','singlekursus')->name('singlekursus');
+        Route::get('/singleloker','singleloker')->name('singleloker');
+        Route::get('/singlekelolapelamar','singlekelolapelamar')->name('singlekelolapelamar');
+        Route::get('/laporan','laporan')->name('laporan');
+        Route::get('/tambahperan','tambahperan')->name('tambahperan');
+        Route::get('/editperan','editperan')->name('editperan');
+        
+
+    });
+});
+
+//single kursus
+    // route::controller(single_kursusController::class)->group(function(){
+    //     route::get('singlekursus', 'singlekursus')->name('singlekursus');
+    // });
+
+    Route::prefix('company-admin')->group(function () {
+        Route::get('/', [CompanyAdminController::class, 'dashboard'])->name('companyadmin.dashboard'); // ini ke dashboard
+        Route::get('/dashboard', [CompanyAdminController::class, 'dashboard']); // opsional, boleh hapus nanti
+        Route::get('/pekerjaan', [CompanyAdminController::class, 'pekerjaan'])->name('companyadmin.pekerjaan');
+        Route::get('/pelamar', [CompanyAdminController::class, 'pelamar'])->name('companyadmin.pelamar');
+        Route::get('/pengaturan', [CompanyAdminController::class, 'pengaturan'])->name('companyadmin.pengaturan');
+        Route::get('/logout', [CompanyAdminController::class, 'logout'])->name('companyadmin.logout');
+    });
+
+
+
 Route::controller(HomeController::class)->group(function () {
     Route::get('calendar','calendar')->name('calendar');
     Route::get('chatmessage','chatMessage')->name('chatMessage');
@@ -137,6 +181,8 @@ Route::prefix('invoice')->group(function () {
         Route::get('/invoice-preview', 'invoicePreview')->name('invoicePreview');
     });
 });
+
+
 
 
     // aiApplication

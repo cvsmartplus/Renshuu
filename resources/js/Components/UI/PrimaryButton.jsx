@@ -2,6 +2,7 @@ export default function PrimaryButton({
     className = '',
     disabled,
     children,
+    pending,
     ...props
 }) {
     return (
@@ -9,12 +10,12 @@ export default function PrimaryButton({
             {...props}
             className={
                 `${
-                    disabled
+                    disabled ? 'opacity-25' : ''
                 } ` + className
             }
             disabled={disabled}
         >
-            {children}
+        {pending ? 'Loading...' : children}           
         </button>
     );
 }

@@ -26,7 +26,6 @@ export default function LoginForm({ onSuccess, canResetPassword }) {
 
     return (
         <form onSubmit={submit}>
-        {/* Email Input */}
             <div className="mb-3">
                 <InputLabel  htmlFor="email" value="Email" />
                 <TextInput
@@ -43,7 +42,6 @@ export default function LoginForm({ onSuccess, canResetPassword }) {
                 <InputError message={errors.email} />
             </div>
 
-        {/* Password Input */}
             <div className="mb-3">
                 <InputLabel  htmlFor="password" value="Kata Sandi" />
                 <TextInput
@@ -59,7 +57,6 @@ export default function LoginForm({ onSuccess, canResetPassword }) {
                 <InputError message={errors.password} />
             </div>
 
-        {/* Remember Me & Forgot Password */}
             <div className="d-flex justify-content-between align-items-center mb-3">
                 <div className="form-check">
                     <Checkbox
@@ -76,8 +73,8 @@ export default function LoginForm({ onSuccess, canResetPassword }) {
                     href={route('password.request')} 
                     className="text-decoration-none text-danger"
                     onClick={(e) => {
-                        e.preventDefault(); // Mencegah navigasi Inertia
-                        window.location.href = route('password.request'); // Paksa reload
+                        e.preventDefault(); 
+                        window.location.href = route('password.request'); 
                     }}
                     >
                         Lupa Kata Sandi?
@@ -85,18 +82,15 @@ export default function LoginForm({ onSuccess, canResetPassword }) {
                 )}
             </div>
 
-        {/* Login Button */}
-            <PrimaryButton className="btn-cta p-1 rounded w-100" disabled={processing}>
+            <PrimaryButton className="btn-cta p-1 rounded w-100" disabled={processing} pending={processing}>
                 Login
             </PrimaryButton>
-    {/* Divider */}
         <div className="d-flex align-items-center my-3">
             <hr className="flex-grow-1" />
             <span className="mx-2">atau</span>
             <hr className="flex-grow-1" />
         </div>
 
-    {/* Social Login */}
         <PrimaryButton className=" btn-outline-cta p-1 rounded w-100">
             <img src="../images/icons/google.png" width="20" height="20" className="me-2" alt="Google" />
             Masuk dengan Google

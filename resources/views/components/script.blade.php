@@ -23,6 +23,9 @@
     <script src="{{ asset('assets/js/lib/file-upload.js') }}"></script>
     <!-- audioplayer -->
     <script src="{{ asset('assets/js/lib/audioplayer.js') }}"></script>
+    {{-- multi-step --}}
+    <script src="{{ asset('assets/js/lib/multistep.js') }}"></script>
+
 
     <!-- main js -->
     <script src="{{ asset('assets/js/app.js') }}"></script>
