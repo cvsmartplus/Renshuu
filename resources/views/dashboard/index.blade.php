@@ -1,8 +1,8 @@
 @extends('layout.layout')
 
 @php
-    $title = 'Buat Kursus';
-    $subTitle = 'Kursus';
+    $title = 'Halaman Kursus';
+    $subTitle = 'Halaman Kursus';
     $script = '<script src="' . asset('assets/js/homeOneChart.js') . '"></script>
     <script src="' . asset('assets/js/lineChartPageChart.js') . '"></script>
     <script src="' . asset('assets/js/columnChartPageChart.js') . '"></script>';
@@ -41,7 +41,7 @@
                         </div>
                         <div
                             class="w-50-px h-50-px bg-purple rounded-circle d-flex justify-content-center align-items-center">
-                            <iconify-icon icon="fa-solid:award" class="text-white text-2xl mb-0"></iconify-icon>
+                            <iconify-icon icon="mdi:clipboard-list" class="text-white text-2xl mb-0"></iconify-icon>
                         </div>
                     </div>
                     <p class="fw-medium text-sm text-primary-light mt-12 mb-0 d-flex align-items-center gap-2">
@@ -63,7 +63,8 @@
                         </div>
                         <div
                             class="w-50-px h-50-px bg-info rounded-circle d-flex justify-content-center align-items-center">
-                            <iconify-icon icon="fluent:people-20-filled" class="text-white text-2xl mb-0"></iconify-icon>
+                            <iconify-icon icon="material-symbols:menu-book-outline-rounded" class="text-white text-2xl mb-0"></iconify-icon>
+
                         </div>
                     </div>
                     <p class="fw-medium text-sm text-primary-light mt-12 mb-0 d-flex align-items-center gap-2">
@@ -135,7 +136,7 @@
                             </select>
                         </div>
                         <div class="d-flex flex-wrap align-items-center gap-2 mt-8">
-                            <h6 class="mb-0">2,000</h6>
+                            <h6 class="mb-0">1.500.000</h6>
                             <span class="text-xs fw-medium">Per bulan ini</span>
                         </div>
                         <div id="defaultLineChart" class="apexcharts-tooltip-style-1"></div>
@@ -145,8 +146,12 @@
         </div>
         <div class="col-md-6">
             <div class="card h-100 p-0">
-                <div class="card-header border-bottom bg-base py-16 px-24">
-                    <h6 class="text-lg fw-semibold mb-0">Column Charts</h6>
+                <div class="card-header  spy-16 px-24">
+                    <h6 class="text-lg fw-semibold mb-0">Jumlah Anggota Kursus</h6>
+                    <div class="d-flex flex-wrap align-items-center gap-2 mt-8">
+                        <h6 class="mb-0">10.000</h6>
+                        <span class="text-xs fw-medium">Per minggu ini</span>
+                    </div>
                 </div>
                 <div class="card-body p-24">
                     <div id="columnGroupBarChart" class=""></div>
@@ -256,7 +261,7 @@
             </p>
         </div>
         <div class="col-6 d-flex d-inline-flex align-items-center flex-row-reverse">
-            <a href="#" class="btn btn-primary" style="background-color: blue">
+            <a href="{{route('tambahkursus')}}" class="btn btn-primary" style="background-color: blue">
                 <div class="d-inline-flex align-items-center text-light cursor-pointer">
                     <i class="ri-add-line"></i>
                     <span class="ms-2">Tambah Kursus</span>
@@ -264,29 +269,27 @@
             </a>
         </div>
     </div>
-    <div class="card">
-        <div class="card-header d-flex flex-wrap align-items-center justify-content-end gap-3">
-            <div class="d-flex flex-wrap align-items-center gap-3">
-                <div class="d-flex justify-content-end align-items-center gap-3">
-                    <!-- Pencarian -->
-                    <div class="d-flex align-items-center text-secondary cursor-pointer">
-                        <i class="ri-search-line"></i>
-                        <span class="ms-2">Pencarian</span>
-                    </div>
-                    <!-- Filter -->
-                    <div class="d-flex align-items-center text-secondary cursor-pointer">
-                        <i class="ri-filter-fill"></i>
-                        <span class="ms-2">Filter</span>
-                    </div>
-                    <!-- Pilih -->
-                    <div class="d-flex align-items-center text-secondary cursor-pointer">
-                        <i class="ri-grid-line"></i>
-                        <span class="ms-2">Pilih</span>
-                    </div>
-                </div>
-            </div>
+    <div class="d-flex justify-content-between align-items-center flex-wrap my-5">
+
+        <!-- Kiri: Filter + Status -->
+        <div class="d-flex align-items-center gap-2">
+            <!-- Filter Button -->
+            <button
+                class="btn btn-light border shadow-sm d-flex align-items-center gap-2">
+                <iconify-icon icon="tabler:filter"></iconify-icon>
+                Filter
+            </button>
         </div>
-    </div>
+
+        <!-- Kanan: Search Box -->
+        <div class="input-group shadow-sm" style="max-width: 250px;">
+            <span class="input-group-text bg-white border-end-0">
+                <iconify-icon icon="tabler:search"></iconify-icon>
+            </span>
+            <input type="text" class="form-control border-start-0"
+                placeholder="Pencarian">
+        </div>
+    </div> 
     <div class="mt-12">
         <div class="row gy-4">
             <div class="col-xxl-3 col-lg-4 col-sm-6">

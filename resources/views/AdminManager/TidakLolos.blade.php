@@ -2,10 +2,11 @@
 
 @php
     $title='Kelola Akun Admin';
+    $subTitle = 'Menu Utama';
     $script= '<script src="' . asset('assets/js/homeOneChart.js') . '"></script>
     <script src="' . asset('assets/js/lineChartPageChart.js') . '"></script>
     <script src="' . asset('assets/js/columnChartPageChart.js') . '"></script>
-    <script src="' . asset('assets/js/changestatus.js') . '"></script>';
+    <script src="' . asset('assets/js/handleredirect.js') . '"></script>';
 @endphp
 
 @section('content')
@@ -66,9 +67,9 @@
                                           Role
                                         </div>
                                         <ul class="dropdown-menu" aria-labelledby="dropdownRole">
-                                          <li><a class="dropdown-item" href="#">Admin Manager</a></li>
-                                          <li><a class="dropdown-item" href="#">Admin Kursus</a></li>
-                                          <li><a class="dropdown-item" href="#">Admin Loker</a></li>
+                                          <li><a class="dropdown-item" href="#">Admin</a></li>
+                                          <li><a class="dropdown-item" href="#">Editor</a></li>
+                                          <li><a class="dropdown-item" href="#">User</a></li>
                                         </ul>
                                     </div>
                                 </th>
@@ -80,8 +81,9 @@
                                           Status
                                         </div>
                                         <ul class="dropdown-menu" aria-labelledby="dropdownRole">
-                                          <li><a class="dropdown-item" href="#">Aktif</a></li>
-                                          <li><a class="dropdown-item" href="#">Tidak Aktif</a></li>
+                                          <li><a class="dropdown-item" href="#">Admin</a></li>
+                                          <li><a class="dropdown-item" href="#">Editor</a></li>
+                                          <li><a class="dropdown-item" href="#">User</a></li>
                                         </ul>
                                     </div>
                                 </th>
@@ -110,7 +112,7 @@
                                     <span>2025-04-05 08:09:29</span>
                                 </td>
                                 <td>
-                                    <button class="btn btn-success status-btn" style="width: 110px; background-color: #1CA700;">Aktif</button>
+                                    <button class="btn btn-danger status-btn" style="background-color: #D90000;">Tidak Lolos</button>
                                 </td>
                             </tr>
                             <tr>
@@ -135,7 +137,7 @@
                                     <span>2025-04-05 08:09:29</span>
                                 </td>
                                 <td>
-                                    <button class="btn btn-danger status-btn" style="background-color: #D90000;">Tidak Aktif</button>
+                                    <button class="btn btn-danger status-btn" style="background-color: #D90000;">Tidak Lolos</button>
                                 </td>
                             </tr>
                             <tr>
@@ -160,7 +162,7 @@
                                     <span>2025-03-02 10:09:29</span>
                                 </td>
                                 <td>
-                                    <button class="btn btn-success status-btn" style="width: 110px; background-color: #1CA700;">Aktif</button>
+                                    <button class="btn btn-danger status-btn" style="background-color: #D90000;">Tidak Lolos</button>
                                 </td>
                             </tr>
                         </tbody>

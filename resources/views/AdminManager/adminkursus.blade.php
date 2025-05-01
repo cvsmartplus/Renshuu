@@ -1,38 +1,43 @@
 @extends('layout.layout')
 
+@php
+    $title = 'Halaman Kursus';
+    $script = '<script src="' . asset('assets/js/homeOneChart.js') . '"></script>
+    <script src="' . asset('assets/js/lineChartPageChart.js') . '"></script>
+    <script src="' . asset('assets/js/columnChartPageChart.js') . '"></script>';
+@endphp
+
 @section('content')
     <div class="card-header d-flex flex-wrap align-items-center justify-content-between gap-3 mb-20">
         <div class="d-flex flex-wrap align-items-center gap-3">
-            <a href="{{ route('invoiceAdd') }}" class="btn btn-sm btn-primary-600"><i class="ri-add-line"></i> Tambah
-                Artikel</a>
+            <a href="{{ route('tambahkursus') }}" class="btn btn-sm btn-primary-600" style="background-color: blue;"><i class="ri-add-line"></i> Tambah
+                Kursus</a>
         </div>
         <div class="d-flex flex-nowrap align-items-center gap-3">
-            <a href="{{ route('invoiceAdd') }}" class="btn btn-sm btn-danger-600"><i class="ri-delete-bin-line"></i> Hapus
-                Artikel</a>
+            <a href="#" class="btn btn-sm btn-danger-600"><i class="ri-delete-bin-line" style="background-color: #"></i> Hapus
+                Kursus</a>
         </div>
     </div>
 
-    <div class="card mb-20">
-        <div class="card-header d-flex flex-wrap align-items-center justify-content-end gap-3">
-            <div class="d-flex flex-wrap align-items-center gap-3">
-                <div class="d-flex justify-content-end align-items-center gap-3">
-                    <!-- Pencarian -->
-                    <div class="d-flex align-items-center text-secondary cursor-pointer">
-                        <i class="ri-search-line"></i>
-                        <span class="ms-2">Pencarian</span>
-                    </div>
-                    <!-- Filter -->
-                    <div class="d-flex align-items-center text-secondary cursor-pointer">
-                        <i class="ri-filter-fill"></i>
-                        <span class="ms-2">Filter</span>
-                    </div>
-                    <!-- Pilih -->
-                    <div class="d-flex align-items-center text-secondary cursor-pointer">
-                        <i class="ri-grid-line"></i>
-                        <span class="ms-2">Pilih</span>
-                    </div>
-                </div>
-            </div>
+     <div class="d-flex justify-content-between align-items-center flex-wrap my-3">
+
+        <!-- Kiri: Filter + Status -->
+        <div class="d-flex align-items-center gap-2">
+            <!-- Filter Button -->
+            <button
+                class="btn btn-light border shadow-sm d-flex align-items-center gap-2">
+                <iconify-icon icon="tabler:filter"></iconify-icon>
+                Filter
+            </button>
+        </div>
+
+        <!-- Kanan: Search Box -->
+        <div class="input-group shadow-sm" style="max-width: 250px;">
+            <span class="input-group-text bg-white border-end-0">
+                <iconify-icon icon="tabler:search"></iconify-icon>
+            </span>
+            <input type="text" class="form-control border-start-0"
+                placeholder="Pencarian">
         </div>
     </div>
     <div class="row gy-4">

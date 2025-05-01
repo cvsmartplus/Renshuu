@@ -1,11 +1,10 @@
 @extends('layout.layout')
 
 @php
-    $title = 'Menu Utama';
-    $subTitle = 'Menu Utama';
+    $title = 'Kelola Akun Admin';
     $script = '<script src="' . asset('assets/js/homeOneChart.js') . '"></script>
     <script src="' . asset('assets/js/lineChartPageChart.js') . '"></script>
-    <script src="' . asset('assets/js/handleredirect.js') . '"></script>
+    <script src="' . asset('assets/js/changerole.js') . '"></script>
     <script src="' . asset('assets/js/columnChartPageChart.js') . '"></script>';
 @endphp
 
@@ -25,10 +24,11 @@
                         <span class="input-group-text">🔍</span>
                         <input type="text" class="form-control" placeholder="Cari">
                     </div>
-                    <select class="form-select form-select-sm" style="width: 100px;" onchange="handleRedirect(this)">
-                        <option value="status">Status</option>
-                        <option value="/status/Tidak Lolos">Tidak Lolos</option>
-                        <option value="/status/Lolos tahap selanjutnya">Lolos tahap selanjutnya</option>
+                    <select class="form-select form-select-sm" style="width: 100px;" onchange="handleStatusChange(this)">
+                        <option value="role">Role</option>
+                        <option value="admin-manager">Admin Manager</option>
+                        <option value="admin-loker">Admin Loker</option>
+                        <option value="admin-kursus">Admin Kursus</option>
                     </select>
                 </div>
             </div>
@@ -60,30 +60,8 @@
                             <tr>
                                 <th scope="col">ID</th>
                                 <th scope="col">Tindakan</th>
-                                <th scope="col">
-                                    <div class="dropdown">
-                                        <div class="btn-light dropdown-toggle text-start" id="dropdownRole" data-bs-toggle="dropdown" aria-expanded="false">
-                                          Waktu
-                                        </div>
-                                        <ul class="dropdown-menu" aria-labelledby="dropdownRole">
-                                          <li><a class="dropdown-item" href="#">Admin</a></li>
-                                          <li><a class="dropdown-item" href="#">Editor</a></li>
-                                          <li><a class="dropdown-item" href="#">User</a></li>
-                                        </ul>
-                                    </div>
-                                </th>
-                                <th class="text-center">
-                                    <div class="dropdown">
-                                        <div class="btn-light dropdown-toggle text-start" id="dropdownRole" data-bs-toggle="dropdown" aria-expanded="false">
-                                          Role
-                                        </div>
-                                        <ul class="dropdown-menu" aria-labelledby="dropdownRole">
-                                          <li><a class="dropdown-item" href="#">Admin</a></li>
-                                          <li><a class="dropdown-item" href="#">Editor</a></li>
-                                          <li><a class="dropdown-item" href="#">User</a></li>
-                                        </ul>
-                                    </div>
-                                </th>
+                                <th scope="col">Waktu</th>
+                                <th class="text-center">Role</th>
                             </tr>
                         </thead>
                         <tbody>

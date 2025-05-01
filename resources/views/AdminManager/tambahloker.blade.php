@@ -25,37 +25,11 @@
                         <div class="form-wizard">
                             <form action="{{ route('tambahloker') }}" method="post">
                                 @csrf
-                                <div class="form-wizard-header overflow-x-auto scroll-sm pb-8 my-32">
-                                    <ul class="list-unstyled form-wizard-list">
-                                        <li class="form-wizard-list__item active">
-                                            <div class="form-wizard-list__line">
-                                                <div class="form-wizard-list__line">
-                                                    <span class="count">1</span>
-                                                </div>
-                                            </div>
-                                            <span class="text text-xs fw-semibold">Klarifikasi</span>
-                                        </li>
-
-                                        <li class="form-wizard-list__item">
-                                            <div class="form-wizard-list__line">
-                                                <span class="count">2</span>
-                                            </div>
-                                            <span class="text text-xs fw-semibold">Jenis Iklan</span>
-                                        </li>
-                                        <li class="form-wizard-list__item">
-                                            <div class="form-wizard-list__line">
-                                                <span class="count">3</span>
-                                            </div>
-                                            <span class="text text-xs fw-semibold">Tulis</span>
-                                        </li>
-                                    </ul>
-                                </div>
-
                                 <fieldset class="wizard-fieldset show">
                                     <h6 class="text-md text-neutral-900 mb-5">Lengkapi Data Lowongan Kerja Anda Dibawah Ini
                                     </h6>
                                     <div class="row gy-3">
-                                        <!-- Nama Pemateri -->
+                                        <!-- Nama Perusahaan -->
                                         <div class="col-sm-12">
                                             <label class="form-label text-neutral-900">Nama Perusahaan</label>
                                             <div class="position-relative">
@@ -99,13 +73,13 @@
                                             <div class="form-check d-flex align-items-center">
                                                 <input class="form-check-input" type="radio" name="kategori"
                                                     id="manajemen1" value="manajemen1">
-                                                <label class="form-check-label" for="manajemen1">Manajemen Proyek</label>
+                                                <label class="form-check-label" for="manajemen1">Teknologi Informasi (IT)</label>
                                             </div>
 
                                             <div class="form-check d-flex align-items-center">
                                                 <input class="form-check-input" type="radio" name="kategori"
                                                     id="manajemen2" value="manajemen2">
-                                                <label class="form-check-label" for="manajemen2">Manajemen Proyek</label>
+                                                <label class="form-check-label" for="manajemen2">Keuangan & Akuntansi</label>
                                             </div>
 
                                             <div class="form-check d-flex align-items-center">
@@ -283,54 +257,46 @@
                                 </fieldset>
 
                                 <fieldset class="wizard-fieldset">
-                                    <h6 class="text-md text-neutral-500">Account Information</h6>
-                                    <div class="row gy-3">
-                                        <div class="col-12">
-                                            <label class="form-label">User Name*</label>
-                                            <div class="position-relative">
-                                                <input type="text" class="form-control wizard-required"
-                                                    placeholder="Enter User Name" required>
-                                                <div class="wizard-form-error"></div>
-                                            </div>
+                                    {{-- Kartu Pilihan Paket --}}
+                                    <div class="bg-blue-50 p-6 rounded-xl max-w-md mx-auto shadow">
+                                        <p class="text-center mb-4 font-semibold text-gray-600">
+                                            <span class="text-blue-600 font-bold">Iklan Unggulan</span><br>
+                                            Pasang lowongan Anda pada posisi teratas agar mudah ditemukan pencari kerja
+                                        </p>
+
+                                        <div class="space-y-4">
+                                            <button class="w-full border px-4 py-3 rounded-lg hover:bg-blue-100">
+                                                Rp 49.000,00 <span class="block text-sm text-gray-500">3 Hari masa
+                                                    tayang</span>
+                                            </button>
+                                            <button class="w-full border px-4 py-3 rounded-lg hover:bg-blue-100">
+                                                Rp 79.000,00 <span class="block text-sm text-gray-500">7 Hari masa
+                                                    tayang</span>
+                                            </button>
+                                            <button class="w-full border px-4 py-3 rounded-lg hover:bg-blue-100 relative">
+                                                <span
+                                                    class="absolute top-0 right-0 bg-yellow-400 text-xs font-bold px-2 py-1 rounded-bl-lg">Best
+                                                    Seller</span>
+                                                Rp 99.000,00 <span class="block text-sm text-gray-500">30 Hari masa
+                                                    tayang</span>
+                                            </button>
+                                            <button class="w-full border px-4 py-3 rounded-lg hover:bg-gray-100">
+                                                Tidak Sekarang <span class="block text-sm text-gray-500">Lewati iklan
+                                                    unggulan</span>
+                                            </button>
                                         </div>
-                                        <div class="col-sm-4">
-                                            <label class="form-label">Card Number*</label>
-                                            <div class="position-relative">
-                                                <input type="number" class="form-control wizard-required"
-                                                    placeholder="Enter Card Number " required>
-                                                <div class="wizard-form-error"></div>
-                                            </div>
+
+                                        <div class="mt-6 text-right">
+                                            <button
+                                                class="bg-blue-700 text-white px-6 py-2 rounded-lg hover:bg-blue-800">Lanjutkan
+                                                →</button>
                                         </div>
-                                        <div class="col-sm-4">
-                                            <label class="form-label">Card Expiration(MM/YY)*</label>
-                                            <div class="position-relative">
-                                                <input type="number" class="form-control wizard-required"
-                                                    placeholder="Enter Card Expiration" required>
-                                                <div class="wizard-form-error"></div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <label class="form-label">CVV Number*</label>
-                                            <div class="position-relative">
-                                                <input type="number" class="form-control wizard-required"
-                                                    placeholder="CVV Number" required>
-                                                <div class="wizard-form-error"></div>
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <label class="form-label">Password*</label>
-                                            <div class="position-relative">
-                                                <input type="password" class="form-control wizard-required"
-                                                    placeholder="Enter Password" required>
-                                                <div class="wizard-form-error"></div>
-                                            </div>
-                                        </div>
-                                        <div class="form-group d-flex align-items-center justify-content-end gap-8">
-                                            <button type="button"
-                                                class="form-wizard-previous-btn btn btn-neutral-500 border-neutral-100 px-32">Back</button>
-                                            <button type="button"
-                                                class="form-wizard-next-btn btn btn-primary-600 px-32">Next</button>
-                                        </div>
+                                    </div>
+                                    <div class="form-group d-flex align-items-center justify-content-end gap-8">
+                                        <button type="button"
+                                            class="form-wizard-previous-btn btn btn-neutral-500 border-neutral-100 px-32">Back</button>
+                                        <button type="button"
+                                            class="form-wizard-next-btn btn btn-primary-600 px-32">Next</button>
                                     </div>
                                 </fieldset>
 
@@ -402,9 +368,11 @@
                                     </div>
                                     <!-- Edit End -->
                                     <div class="mb-3">
-                                        <label for="job-summary" class="form-label text-neutral-900">Ringkasan Pekerjaan</label>
+                                        <label for="job-summary" class="form-label text-neutral-900">Ringkasan
+                                            Pekerjaan</label>
                                         <p class="text-muted" style="font-size: 0.9rem;">
-                                          Tuliskan pernyataan yang meyakinkan tentang pekerjaan yang Anda tawarkan untuk menarik lebih banyak kandidat.
+                                            Tuliskan pernyataan yang meyakinkan tentang pekerjaan yang Anda tawarkan untuk
+                                            menarik lebih banyak kandidat.
                                         </p>
                                         <textarea id="job-summary" class="form-control" rows="4" style="border-radius: 5px;"></textarea>
                                     </div>

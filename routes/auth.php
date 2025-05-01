@@ -90,7 +90,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::controller(DashboardController::class)->group(function () {
-    Route::get('/admin', 'index')->name('index');
+    Route::get('/adminmanager', 'index')->name('index');
 });
 // Dashboard
 Route::prefix('dashboard')->group(function () {
@@ -98,7 +98,7 @@ Route::prefix('dashboard')->group(function () {
         Route::get('/index', 'index')->name('index');
         Route::get('/index2', 'index2')->name('index2');
         Route::get('/index3', 'index3')->name('index3');
-        Route::get('/index4', 'index4')->name('index4');
+        Route::get('/pendaftar', 'pendaftar')->name('pendaftar');
         Route::get('/index5','index5')->name('index5');
         Route::get('/index6','index6')->name('index6');
         Route::get('/index7','index7')->name('index7');
@@ -128,6 +128,14 @@ Route::prefix('AdminManager')->group(function () {
         Route::get('/laporan','laporan')->name('laporan');
         Route::get('/tambahperan','tambahperan')->name('tambahperan');
         Route::get('/editperan','editperan')->name('editperan');
+        Route::get('/TidakLolos','TidakLolos')->name('TidakLolos');
+        Route::get('/LolosTahapSelanjutnya','LolosTahapSelanjutnya')->name('LolosTahapSelanjutnya');
+        Route::get('/manager','manager')->name('manager');
+        Route::get('/loker','loker')->name('loker');
+        Route::get('/kursus','kursus')->name('kursus');
+        Route::get('/pemateri','pemateri')->name('pemateri');
+        Route::get('/sudahdicek','sudahdicek')->name('sudahdicek');
+        Route::get('/belumdicek','belumdicek')->name('belumdicek');
         
 
     });

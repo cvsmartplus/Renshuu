@@ -11851,6 +11851,21 @@ h6, .h6 {
   background-color: var(--neutral-50);
 }
 
+.fade-in {
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.active-tab {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+}
+
 .border-primary-table {
   border-spacing: 0;
   border-collapse: separate;
@@ -12803,6 +12818,47 @@ select option {
   background-color: transparent !important;
   color: var(--primary-600) !important;
 }
+
+.tab-container {
+  width: fit-content;
+  position: relative;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.tabs {
+  display: flex;
+  position: relative;
+  border-bottom: 1px solid #ccc;
+}
+
+.tab {
+  background: none;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  position: relative;
+  color: #333;
+  font-weight: 500;
+}
+
+.tab.active {
+  color: #007BFF; /* Warna biru utama */
+}
+
+.tab-underline {
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: #007BFF;
+  transition: all 0.3s ease;
+}
+
+.tab-content {
+  padding: 20px 0;
+}
+
 
 /* Active Text Css End */
 /* === nav-tabs css end === */
@@ -14392,6 +14448,19 @@ td.fc-header-center {
 
 .image-upload__imageName {
   margin-top: 4px;
+}
+
+.verif-check.is-valid {
+  box-shadow: 0 0 0 0.2rem rgba(25, 135, 84, 0.25);
+  border-color: #198754;
+}
+
+.bookmark-btn {
+  transition: all 0.2s ease;
+}
+
+.bookmark-btn:active {
+  transform: scale(0.95);
 }
 
 .image-upload__deleteBtn {

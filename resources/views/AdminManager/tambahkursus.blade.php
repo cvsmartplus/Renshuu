@@ -1,8 +1,8 @@
 @extends('layout.layout')
 
 @php
-    $title = 'Menu Utama';
-    $subTitle = 'Menu Utama';
+    $title = 'tambah loker';
+    $subTitle = 'tambah loker';
     $script = '<script src="' . asset('assets/js/homeOneChart.js') . '"></script>
     <script src="' . asset('assets/js/lineChartPageChart.js') . '"></script>
     <script src="' . asset('assets/js/columnChartPageChart.js') . '"></script>
@@ -23,23 +23,6 @@
                     <!-- Form Wizard Start -->
                     <div class="form-wizard">
                         <form action="#" method="post">
-                            <div class="form-wizard-header overflow-x-auto scroll-sm pb-8 my-32">
-                                <ul class="list-unstyled form-wizard-list">
-                                    <li class="form-wizard-list__item active">
-                                        <div class="form-wizard-list__line">
-                                            <span class="count">1</span>
-                                        </div>
-                                        <span class="text text-xs fw-semibold">Kursus</span>
-                                    </li>
-                                    <li class="form-wizard-list__item">
-                                        <div class="form-wizard-list__line">
-                                            <span class="count">2</span>
-                                        </div>
-                                        <span class="text text-xs fw-semibold">Pemateri</span>
-                                    </li>
-                                </ul>
-                            </div>
-
                             <fieldset class="wizard-fieldset show">
                                 <div class="row gy-3">
                                     <div class="col-12">
@@ -47,14 +30,6 @@
                                         <div class="position-relative">
                                             <input type="text" class="form-control wizard-required"
                                                 placeholder="Enter First Name" required>
-                                            <div class="wizard-form-error"></div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <label class="form-label">Sub Judul Kursus</label>
-                                        <div class="position-relative">
-                                            <input type="type" class="form-control wizard-required"
-                                                placeholder="Tulis sesuatu yang menarik" required>
                                             <div class="wizard-form-error"></div>
                                         </div>
                                     </div>

@@ -1,8 +1,7 @@
 @extends('layout.layout')
 
 @php
-    $title = 'Menu Utama';
-    $subTitle = 'Menu Utama';
+    $title = 'Kelola Pelamar';
     $script = '<script src="' . asset('assets/js/homeOneChart.js') . '"></script>
     <script src="' . asset('assets/js/lineChartPageChart.js') . '"></script>
     <script src="' . asset('assets/js/columnChartPageChart.js') . '"></script>';
@@ -10,26 +9,25 @@
 
 @section('content')
     <div class="container">
-        <div class="row">
-            <div class="col">
-                <div class="text-sm-start fw-bold d-none d-sm-block">
-                    Pilih terlebih dahulu loker apa yang ingin Anda hapus
-                </div>
-            </div>
-        </div>
+        <div class="d-flex justify-content-between align-items-center flex-wrap my-3">
 
-        <!-- Filter, Pencarian, dan Pilih -->
-        <div class="card mb-3">
-            <div class="card-header d-flex flex-wrap align-items-center justify-content-end gap-3">
-                <div class="d-flex align-items-center text-secondary cursor-pointer">
-                    <i class="ri-search-line"></i> <span class="ms-2">Pencarian</span>
-                </div>
-                <div class="d-flex align-items-center text-secondary cursor-pointer">
-                    <i class="ri-filter-fill"></i> <span class="ms-2">Filter</span>
-                </div>
-                <div class="d-flex align-items-center text-secondary cursor-pointer">
-                    <i class="ri-grid-line"></i> <span class="ms-2">Pilih</span>
-                </div>
+            <!-- Kiri: Filter + Status -->
+            <div class="d-flex align-items-center gap-2">
+                <!-- Filter Button -->
+                <button
+                    class="btn btn-light border shadow-sm d-flex align-items-center gap-2">
+                    <iconify-icon icon="tabler:filter"></iconify-icon>
+                    Filter
+                </button>
+            </div>
+    
+            <!-- Kanan: Search Box -->
+            <div class="input-group shadow-sm" style="max-width: 250px;">
+                <span class="input-group-text bg-white border-end-0">
+                    <iconify-icon icon="tabler:search"></iconify-icon>
+                </span>
+                <input type="text" class="form-control border-start-0"
+                    placeholder="Pencarian">
             </div>
         </div>
         <div class="row row-cols-1 row-cols-md-2 g-4 mb-3">
@@ -60,10 +58,6 @@
                             </a>
 
                         </div>
-
-                        <div class="position-absolute top-0 end-0 mt-2 me-2">
-                            <button class="btn btn-light"><i class="ri-bookmark-line"></i></button>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -93,10 +87,6 @@
                                 <i class="ri-user-line"></i>
                                 Kelola Pelamar &gt;
                             </a>
-                        </div>
-
-                        <div class="position-absolute top-0 end-0 mt-2 me-2">
-                            <button class="btn btn-light"><i class="ri-bookmark-line"></i></button>
                         </div>
                     </div>
                 </div>
@@ -129,10 +119,6 @@
                                 Kelola Pelamar &gt;
                             </a>
                         </div>
-
-                        <div class="position-absolute top-0 end-0 mt-2 me-2">
-                            <button class="btn btn-light"><i class="ri-bookmark-line"></i></button>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -162,10 +148,6 @@
                                 <i class="ri-user-line"></i>
                                 Kelola Pelamar &gt;
                             </a>
-                        </div>
-
-                        <div class="position-absolute top-0 end-0 mt-2 me-2">
-                            <button class="btn btn-light"><i class="ri-bookmark-line"></i></button>
                         </div>
                     </div>
                 </div>

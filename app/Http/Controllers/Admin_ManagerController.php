@@ -86,4 +86,44 @@ class Admin_ManagerController extends Controller
     {
         return view('AdminManager/editperan');
     }
+    
+    public function TidakLolos()
+    {
+        return view('AdminManager/TidakLolos');
+    }
+    
+    public function LolosTahapSelanjutnya()
+    {
+        return view('AdminManager/LolosTahapSelanjutnya');
+    }
+    
+    public function manager()
+    {
+        return view('AdminManager/manager');
+    }
+    
+    public function loker()
+    {
+        return view('AdminManager/loker');
+    }
+    
+    public function kursus()
+    {
+        return view('AdminManager/kursus');
+    }
+    
+    public function pemateri()
+    {
+        return view('AdminManager/pemateri');
+    }
+    
+    public function sudahdicek()
+    {
+        return view('AdminManager/SudahDicek');
+    }
+    
+    public function belumdicek()
+    {
+        return view('AdminManager/BelumDicek');
+    }
 }

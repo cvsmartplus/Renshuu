@@ -16,7 +16,7 @@
                 <img src="{{ asset('images/managers/ADA-logo.png') }}" alt="image" class="img-fluid" style="max-width: 200px; height: auto;">
             </div>
             <div class="col-md-6 text-end">
-                <a href="{{ route('adminkursus') }}" class="btn btn-primary rounded-3 px-4 py-2">
+                <a href="{{ route('pekerjaan') }}" class="btn btn-primary rounded-3 px-4 py-2 text-center" style="background-color: #002F87; width: 110px; height: 45px;">
                     <i class="ri-arrow-left-line fs-5 me-2"></i>Kembali
                 </a>
             </div>

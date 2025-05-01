@@ -1,16 +1,23 @@
 @extends('layout.layout')
 
+@php
+    $title = 'Halaman Artikel';
+    $script = '<script src="' . asset('assets/js/homeOneChart.js') . '"></script>
+    <script src="' . asset('assets/js/lineChartPageChart.js') . '"></script>
+    <script src="' . asset('assets/js/columnChartPageChart.js') . '"></script>';
+@endphp
+
 @section('content')
     <div class=" d-flex justify-content-end d-none d-sm-block text-sm-end">
         <p class="text-neutral-500">"Pilih artikel terlebih dahulu untuk menghapus"</p>
     </div>
     <div class="card-header d-flex flex-wrap align-items-center justify-content-between gap-3 mb-20">
         <div class="d-flex flex-wrap align-items-center gap-3">
-            <a href="{{ route('buatarticle') }}" class="btn btn-sm btn-primary-600"><i class="ri-add-line"></i> Tambah
+            <a href="{{ route('buatarticle') }}" class="btn btn-sm btn-primary-600" style="background-color: blue;"><i class="ri-add-line"></i> Tambah
                 Artikel</a>
         </div>
         <div class="d-flex flex-nowrap align-items-center gap-3">
-            <a href="{{ route('invoiceAdd') }}" class="btn btn-sm btn-danger-600"><i class="ri-delete-bin-line"></i> Hapus
+            <a href="{{ route('invoiceAdd') }}" class="btn btn-sm btn-danger-600" style="background-color: "><i class="ri-delete-bin-line"></i> Hapus
                 Artikel</a>
         </div>
     </div>

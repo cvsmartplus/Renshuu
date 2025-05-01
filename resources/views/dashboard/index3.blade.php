@@ -1,7 +1,7 @@
 @extends('layout.layout')
 @php
-    $title='Buat Artikel';
-    $subTitle = 'Artikel';
+    $title='Halaman Artikel';
+    $subTitle = 'Halaman Artikel';
     $script = '<script src="' . asset('assets/js/homethreeChart.js') . '"></script>
     <script src="' . asset('assets/js/columnChartPageChart.js') . '"></script>';
 @endphp
@@ -14,16 +14,16 @@
                     <div class="card-body p-20">
                         <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
                             <div>
-                                <p class="fw-medium text-primary-light mb-1">Total Anggota</p>
-                                <h6 class="mb-0">10,000</h6>
+                                <p class="fw-medium text-primary-light mb-1">Total Artikel Diunggah</p>
+                                <h6 class="mb-0">54</h6>
                             </div>
-                            <div class="w-50-px h-50-px bg-cyan rounded-circle d-flex justify-content-center align-items-center">
-                                <iconify-icon icon="gridicons:multiple-users" class="text-white text-2xl mb-0"></iconify-icon>
+                            <div class="w-50-px h-50-px bg-warning-500 rounded-circle d-flex justify-content-center align-items-center">
+                                <iconify-icon icon="material-symbols:article-outline" class="text-white text-2xl mb-0"></iconify-icon>
                             </div>
                         </div>
                         <p class="fw-medium text-sm text-primary-light mt-12 mb-0 d-flex align-items-center gap-2">
                             <span class="d-inline-flex align-items-center gap-1 text-success-main">
-                                <iconify-icon icon="bxs:up-arrow" class="text-xs"></iconify-icon> +5000
+                                <iconify-icon icon="bxs:up-arrow" class="text-xs"></iconify-icon> +13
                             </span>
                             Dibandingkan bulan lalu
                         </p>
@@ -36,7 +36,11 @@
         <div class="col-md-6">
             <div class="card h-100 p-0">
                 <div class="card-header border-bottom bg-base py-16 px-24">
-                    <h6 class="text-lg fw-semibold mb-0">Column Charts</h6>
+                    <h6 class="text-lg fw-semibold mb-0">Jumlah Artikel yang Diunggah</h6>
+                    <div class="d-flex flex-wrap align-items-center gap-2 mt-8">
+                        <h6 class="mb-0">20</h6>
+                        <span class="text-xs fw-medium">Artikel Diunggah Bulan Ini</span>
+                    </div>
                 </div>
                 <div class="card-body p-24">
                     <div id="columnGroupBarChart" class=""></div>
@@ -57,7 +61,7 @@
                                 <tr>
                                     <th scope="col">ID</th>
                                     <th scope="col">Nama Admin Kursus</th>
-                                    <th scope="col">Jumlah Kursus Dibuat</th>
+                                    <th scope="col">Jumlah Artikel Dibuat</th>
                                     <th scope="col">Tanggal Akun Dibuat</th>
                                     <th scope="col">Status</th>
                                 </tr>
@@ -68,35 +72,35 @@
                                     <td>Habib Agan</td>
                                     <td>12</td>
                                     <td>20/02/2020</td>
-                                    <td><span class="bg-warning-focus text-warning-main px-24 py-4 rounded-pill fw-medium text-sm">Pending</span></td>
+                                    <td><span class="text-danger px-24 py-4 fw-medium text-sm">Tidak Aktif</span></td>
                                 </tr>
                                 <tr>
                                     <td>2</td>
-                                    <td>Masuul</td>
+                                    <td>Massul</td>
                                     <td>15</td>
                                     <td>12/09/2001</td>
-                                    <td><span class="bg-danger-focus text-danger-main px-24 py-4 rounded-pill fw-medium text-sm">Rejected</span></td>
+                                    <td><span class="text-danger px-24 py-4  fw-medium text-sm">Tidak Aktif</span></td>
                                 </tr>
                                 <tr>
                                     <td>3</td>
                                     <td>Aziz</td>
                                     <td>29</td>
                                     <td>31/12/2025</td>
-                                    <td><span class="bg-success-focus text-success-main px-24 py-4 rounded-pill fw-medium text-sm">Completed</span></td>
+                                    <td><span class="text-success-main px-24 py-4  fw-medium text-sm">Aktif</span></td>
                                 </tr>
                                 <tr>
                                     <td>4</td>
-                                    <td>Helnah</td>
+                                    <td>Helmi</td>
                                     <td>51</td>
                                     <td>10/10/2010</td>
-                                    <td><span class="bg-success-focus text-success-main px-24 py-4 rounded-pill fw-medium text-sm">Completed</span></td>
+                                    <td><span class="text-success-main px-24 py-4  fw-medium text-sm">Aktif</span></td>
                                 </tr>
                                 <tr>
                                     <td>5</td>
-                                    <td>Mas Agus</td>
+                                    <td>Aldi</td>
                                     <td>90</td>
                                     <td>12/12/2012</td>
-                                    <td><span class="bg-success-focus text-success-main px-24 py-4 rounded-pill fw-medium text-sm">Completed</span></td>
+                                    <td><span class="text-success-main px-24 py-4  fw-medium text-sm">Aktif</span></td>
                                 </tr>
                             </tbody>
                         </table>

@@ -63,7 +63,7 @@
                                     </a>
                                 </td>
                                 <td>
-                                    <span class="bg-secondary-200 text-dark-main px-24 py-4 rounded-pill fw-medium text-sm" style="background-color: #D9D9D9">Belum Dicek</span>
+                                    <span class="bg-secondary-200 text-dark-main px-24 py-4 rounded-pill fw-medium text-sm" style="background-color: #31ee19">Sudah Dicek</span>
                                 </td>
                             </tr>
                             <tr>
@@ -117,7 +117,7 @@
                                     </a>
                                 </td>
                                 <td><span
-                                    class="bg-secondary-200 text-dark-main px-24 py-4 rounded-pill fw-medium text-sm" style="background-color: #D9D9D9">Belum Dicek</span>
+                                    class="bg-secondary-200 text-dark-main px-24 py-4 rounded-pill fw-medium text-sm" style="background-color: #31ee19">Sudah Dicek</span>
                                 </td>
                             </tr>
                             <tr>
