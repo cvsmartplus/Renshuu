@@ -158,12 +158,25 @@
           categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
       },
       yaxis: {
-          labels: {
-              formatter: function (value) {
-                  return (value / 1000).toFixed(0) + 'k';
-              }
+        min: 0,
+        max: 100000,
+        tickAmount: 5,
+        labels: {
+          show: true, // pastikan labels diaktifkan
+          formatter: function (value) {
+            console.log("Y-axis value", value);
+            if (value >= 1000) {
+              return (value / 1000).toFixed(0) + "K";
+            }
+            return value.toString();
+          },
+          style: {
+            fontSize: "14px",
+            colors: ['#000'] // opsional, biar yakin kelihatan
           }
+        }
       },
+      
       tooltip: {
           y: {
               formatter: function (value) {

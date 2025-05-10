@@ -21,9 +21,9 @@ class DashboardController extends Controller
         return view('dashboard/index3');
     }
 
-    public function index4()
+    public function pendaftar()
     {
-        return view('dashboard/index4');
+        return view('dashboard/pendaftar');
     }
 
     public function index5()

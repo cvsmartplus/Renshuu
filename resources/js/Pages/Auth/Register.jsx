@@ -18,7 +18,8 @@ export default function Register() {
         terms: false,
     });
 
-    const [isLoading, setIsLoading] = useState(false); // State untuk mengontrol loading
+    const [isLoading, setIsLoading] = useState(false);
+    const [pending, setPending] = useState(false);
 
     useEffect(() => {
         if (errors.email) {
@@ -35,16 +36,19 @@ export default function Register() {
 
     const submit = (e) => {
         e.preventDefault();
-        setIsLoading(true); // Aktifkan loading
+        setIsLoading(true); 
+        setPending(true),
 
         post(route("register"), {
             onFinish: () => {
-                setIsLoading(false); // Matikan loading setelah request selesai
+                setIsLoading(false);
+                setPending(false); 
                 reset("password", "password_confirmation");
             },
             onError: (err) => {
                 console.log("Error response:", err);
-                setIsLoading(false); // Matikan loading jika ada error
+                setIsLoading(false);
+                setPending(false);
                 if (err.otp) {
                     toast.error("OTP yang Anda masukkan salah!", {
                         position: "top-center",
@@ -63,7 +67,6 @@ export default function Register() {
         <>
             <Head title="Register" />
             <Layout>
-                {/* Overlay Loading */}
                 {isLoading && (
                     <div className="position-fixed top-0 start-0 w-100 h-100 bg-dark bg-opacity-50 d-flex justify-content-center align-items-center" style={{ zIndex: 1050 }}>
                         <div className="spinner-border text-light" role="status" style={{ width: "4rem", height: "4rem" }}>
@@ -72,21 +75,17 @@ export default function Register() {
                     </div>
                 )}
 
-                {/* Registration Section */}
                 <section className="py-3 py-md-5 py-xl-8">
                     <div className="container">
                         <div className="row gy-4 align-items-center">
-                            {/* Image Section */}
                             <div className="col-12 col-md-6 col-xl-7 d-flex justify-content-center">
                                 <div className="col-12 col-xl-9">
                                     <img className="img-fluid" loading="lazy" src="../images/assets/register.png" alt="Register" />
                                 </div>
                             </div>
 
-                            {/* Form Section */}
                             <div className="col-12 col-md-6 col-xl-5 d-flex justify-content-center">
                                 <div className="card p-3 shadow-sm" style={{ maxWidth: "400px", width: "100%" }}>
-                                    {/* Header Form */}
                                     <div className="mb-3 align-items-center d-flex justify-content-between flex-wrap">
                                         <h2 className="text-bold">Daftar</h2>
                                         <p className="text-end">Langkah 1 dari 5</p>
@@ -136,7 +135,7 @@ export default function Register() {
                                             </div>
 
                                             {/* Submit Button */}
-                                            <PrimaryButton className="btn-cta w-100 rounded p-1" disabled={processing}>
+                                            <PrimaryButton className="btn-cta w-100 rounded p-1" disabled={processing} pending={pending}>
                                                 Daftar
                                             </PrimaryButton>
                                         </form>

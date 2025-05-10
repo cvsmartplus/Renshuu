@@ -1,17 +1,7 @@
 <?php
 
-use App\Http\Controllers\AiapplicationController;
-use App\Http\Controllers\Auth\AuthenticatedSessionController;
-use App\Http\Controllers\Auth\ConfirmablePasswordController;
-use App\Http\Controllers\Auth\EmailVerificationNotificationController;
-use App\Http\Controllers\Auth\EmailVerificationPromptController;
-use App\Http\Controllers\Auth\NewPasswordController;
-use App\Http\Controllers\Auth\PasswordController;
-use App\Http\Controllers\Auth\PasswordResetLinkController;
-use App\Http\Controllers\Auth\RegisteredUserController;
-use App\Http\Controllers\Auth\VerifyEmailController;
-use App\Http\Controllers\Auth\OTPVerificationController;
-use App\Http\Controllers\AuthenticationController;
+use App\Http\Controllers\Admin_ManagerController;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ChartController;
 use App\Http\Controllers\ComponentpageController;
@@ -20,13 +10,26 @@ use App\Http\Controllers\CryptoCurrencyController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FormsController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\JobsController;
 use App\Http\Controllers\RoleandaccessController;
-use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\TableController;
 use App\Http\Controllers\UsersController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\InvoiceController;
+use App\Http\Controllers\SettingsController;
+use App\Http\Controllers\AiapplicationController;
+use App\Http\Controllers\Auth\PasswordController;
+use App\Http\Controllers\AuthenticationController;
+use App\Http\Controllers\Auth\NewPasswordController;
+use App\Http\Controllers\Auth\VerifyEmailController;
+use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\Auth\OTPVerificationController;
+use App\Http\Controllers\Auth\PasswordResetLinkController;
+use App\Http\Controllers\Auth\ConfirmablePasswordController;
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\Auth\EmailVerificationPromptController;
+use App\Http\Controllers\Auth\EmailVerificationNotificationController;
+use App\Http\Controllers\single_kursusController;
 
 Route::middleware('guest')->group(function () {
     Route::get('register', [RegisteredUserController::class, 'create'])
@@ -87,7 +90,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::controller(DashboardController::class)->group(function () {
-    Route::get('/admin', 'index')->name('index');
+    Route::get('/adminmanager', 'index')->name('index');
 });
 // Dashboard
 Route::prefix('dashboard')->group(function () {
@@ -95,7 +98,7 @@ Route::prefix('dashboard')->group(function () {
         Route::get('/index', 'index')->name('index');
         Route::get('/index2', 'index2')->name('index2');
         Route::get('/index3', 'index3')->name('index3');
-        Route::get('/index4', 'index4')->name('index4');
+        Route::get('/pendaftar', 'pendaftar')->name('pendaftar');
         Route::get('/index5','index5')->name('index5');
         Route::get('/index6','index6')->name('index6');
         Route::get('/index7','index7')->name('index7');
@@ -105,6 +108,45 @@ Route::prefix('dashboard')->group(function () {
         Route::get('/wallet','wallet')->name('wallet');
     });
 });
+
+//Admin Manager
+Route::prefix('AdminManager')->group(function () {
+    Route::controller(Admin_ManagerController::class)->group(function () {
+        Route::get('/article', 'articleadmin')->name('articleadmin');
+        Route::get('/buatarticle', 'buatarticle')->name('buatarticle');
+        Route::get('/KelolaAkunAdmin', 'KelolaAkunAdmin')->name('KelolaAkunAdmin');
+        Route::get('/kelolapelamar', 'kelolapelamar')->name('kelolapelamar');
+        Route::get('/adminkursus','adminkursus')->name('adminkursus');
+        Route::get('/pekerjaan','pekerjaan')->name('pekerjaan');
+        Route::get('/RiwayatLog','RiwayatLog')->name('RiwayatLog');
+        Route::get('/tambahkursus','tambahkursus')->name('tambahkursus');
+        Route::get('/tambahloker','tambahloker')->name('tambahloker');
+        Route::get('/single','singleartikel')->name('singleartikel');
+        Route::get('/singlekursus','singlekursus')->name('singlekursus');
+        Route::get('/singleloker','singleloker')->name('singleloker');
+        Route::get('/singlekelolapelamar','singlekelolapelamar')->name('singlekelolapelamar');
+        Route::get('/laporan','laporan')->name('laporan');
+        Route::get('/tambahperan','tambahperan')->name('tambahperan');
+        Route::get('/editperan','editperan')->name('editperan');
+        Route::get('/TidakLolos','TidakLolos')->name('TidakLolos');
+        Route::get('/LolosTahapSelanjutnya','LolosTahapSelanjutnya')->name('LolosTahapSelanjutnya');
+        Route::get('/manager','manager')->name('manager');
+        Route::get('/loker','loker')->name('loker');
+        Route::get('/kursus','kursus')->name('kursus');
+        Route::get('/pemateri','pemateri')->name('pemateri');
+        Route::get('/sudahdicek','sudahdicek')->name('sudahdicek');
+        Route::get('/belumdicek','belumdicek')->name('belumdicek');
+        
+
+    });
+});
+
+//single kursus
+    // route::controller(single_kursusController::class)->group(function(){
+    //     route::get('singlekursus', 'singlekursus')->name('singlekursus');
+    // });
+
+
 
 Route::controller(HomeController::class)->group(function () {
     Route::get('calendar','calendar')->name('calendar');
@@ -137,6 +179,8 @@ Route::prefix('invoice')->group(function () {
         Route::get('/invoice-preview', 'invoicePreview')->name('invoicePreview');
     });
 });
+
+
 
 
     // aiApplication

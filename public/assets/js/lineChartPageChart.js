@@ -52,13 +52,16 @@
         yaxis: {
             labels: {
                 formatter: function (value) {
-                    return "$" + value + "k";
+                    const juta = value * 1000000; // konversi ke angka asli
+                    return (juta / 1000000).toFixed(1).replace('.0', '') + "jt";
                 },
                 style: {
                     fontSize: "14px"
                 }
-            },
+            }
         },
+        
+        
         xaxis: {
             categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
             tooltip: {
@@ -107,7 +110,7 @@
       series: [
           {
             name: 'This Day',
-            data: [12, 18, 12, 48, 18, 30, 18, 15, 88, 40, 65, 24, 48],
+            data: [0, 100, 500, 1000, 1500, 2000, 1800, 1600, 1200, 900, 500, 100, 0],
           },
       ],
       chart: {
@@ -210,14 +213,14 @@
             },
         },
         yaxis: {
-                labels: {
-                    formatter: function (value) {
-                    return "$" + value + "k";
-                    },
-                    style: {
-                    fontSize: "14px"
-                    }
+            labels: {
+                formatter: function (value) {
+                    return value.toString();
                 },
+              style: {
+                fontSize: "14px"
+              }
+            }
         },
       tooltip: {
           x: {
@@ -237,6 +240,7 @@
           series: [{
             name: "Desktops",
             data: [5, 25, 35, 15, 21, 15, 35, 35, 51]
+
         }],
         chart: {
             height: 264,
@@ -254,7 +258,7 @@
           enabled: true
         },
         stroke: {
-          curve: 'straight',
+          curve: 'smooth',
           width: 4,
           color: "#000"
         },
@@ -290,14 +294,18 @@
             }
         },
         yaxis: {
-                labels: {
-                    formatter: function (value) {
-                        return "$" + value + "k";
-                    },
-                    style: {
-                        fontSize: "14px"
-                    }
+            labels: {
+                formatter: function (value) {
+                    const allowedValues = [0, 100, 500, 1000, 1500, 2000];
+                    return allowedValues.includes(value) ? "$" + value + "k" : "";
                 },
+                style: {
+                    fontSize: "14px"
+                }
+            },
+            min: 0,
+            max: 2000,
+            tickAmount: 5 // atau 6, tergantung distribusi nilai pada chart
         },
     };
 

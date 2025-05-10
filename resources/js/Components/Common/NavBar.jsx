@@ -14,7 +14,7 @@ export default function NavBar() {
         if (modal) {
             const backdrop = document.querySelector('.modal-backdrop');
             if (backdrop) {
-                backdrop.remove();  // Hapus backdrop jika ada
+                backdrop.remove();
             }
         }
     }, [user]);
@@ -49,7 +49,18 @@ export default function NavBar() {
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav ms-auto align-items-center">
                             <li className="nav-item border-end border-grey pe-3">
-                                <i className="fa-regular fa-bell"></i>
+                                    <button type="button" class="btn  position-relative">
+                                        <i className="fa-regular fa-bell"></i>
+                                        {user ? (
+                                            <>
+                                                <span class="position-absolute translate-middle p-1 bg-danger rounded-circle">
+                                                    <span class="visually-hidden">New alerts</span>
+                                                </span>
+                                            </>
+                                        ): (
+                                            <></>
+                                        )}
+                                </button>
                             </li>
 
                             {user ? (
@@ -60,7 +71,6 @@ export default function NavBar() {
                                         Dashboard
                                     </Link>
                                 </li>
-                                {/* // Jika user sudah login, tampilkan profil */}
                                 <li className="nav-item dropdown ms-3">
                                     <Link 
                                         className="nav-link dropdown-toggle d-flex align-items-center"
@@ -70,7 +80,7 @@ export default function NavBar() {
                                         aria-expanded="false"
                                     >
                                         <img 
-                                            src={user.profile_photo_url || "https://picsum.photos/150"} // Default jika tidak ada foto
+                                            src={user.profile_photo_url || "https://picsum.photos/150"}
                                             alt="User Profile"
                                             className="rounded-circle borstrok"
                                             width="30"
@@ -79,7 +89,7 @@ export default function NavBar() {
                                     </Link>
                                     <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                         <li>
-                                            <Link className="dropdown-item" href={route('profile.edit')}>
+                                            <Link className="dropdown-item" href={route('profile.index')}>
                                                 Profil Saya
                                             </Link>
                                         </li>
